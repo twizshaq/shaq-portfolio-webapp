@@ -1,18 +1,13 @@
 "use client";
-import "./globals.css";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
 import { motion, AnimatePresence} from "framer-motion";
-import SecurityPlus from "@/app/assets/SecurityPlus.png";
-import az104 from "@/app/assets/az104.png";
-import az900 from "@/app/assets/az900.png";
 import { useRef, useEffect, useState } from "react";
 import emailjs from '@emailjs/browser';
-import protexxa_logo from "@/app/assets/protexxa_logo.png";
-import memoji_icon from "@/app/assets/memoji_icon.png";
 import { Typewriter } from '@/app/components/job-title';
 import { AnimatedSection } from '@/app/components/animated-section';
 import Image from 'next/image';
+import { BlobServiceClient } from "@azure/storage-blob";
 
 export default function Home() {
   const [showDetails, setShowDetails] = useState(false);
@@ -84,14 +79,13 @@ const handleSubmit = (e: React.FormEvent) => {
         <p className="name">Hi, I'm <span>Shaquon</span></p>
         <p className="jobtitle">I'm a <span><Typewriter titles={titles} speed={150} pause={2000}/></span></p>
         <p className="about">
-          I have one year of hands-on experience as a Security Analyst, working with tools like Splunk, AWS GuardDuty, and Azure. Driven by a passion for technology and cloud computing, I’m eager to expand my expertise into AI, machine learning, and software development. As a quick learner, I’m committed to continuously building my skill set and applying my knowledge to real-world projects. This portfolio reflects my journey—showcasing the projects I’ve worked on, the skills I’ve acquired, and the progress I’m making as I establish a reputable presence in the tech industry.
+          I have one year of hands-on experience as a Security Analyst, working with tools like Splunk, AWS GuardDuty, and Azure. Driven by a passion for technology and cloud computing, I’m eager to expand my expertise into AI, machine learning, cloud engineering and software development. As a quick learner, I’m committed to continuously building my skill set and applying my knowledge to real-world projects. This portfolio reflects my journey—showcasing the projects I’ve worked on, the skills I’ve acquired, and the progress I’m making as I establish a reputable presence in the tech industry.
         </p>
         </div>
-        <div className="testbox"><Image src={memoji_icon.src} alt="memoji icon" width={400} height={400}/></div>
-
-        <div className="tapered-line"></div>
+        <div className="testbox"><Image src={process.env.NEXT_PUBLIC_MEMOJI_ICON as string} alt="memoji icon" width={400} height={400} priority/></div>
       </div>
 
+    <div className="tapered-line"></div>
 
       <div className="work-xp-certs">
       <div className="experience">
@@ -99,7 +93,7 @@ const handleSubmit = (e: React.FormEvent) => {
         
         <button>
         <div onClick={() => setShowDetails(!showDetails)}className="protexxa-xp">
-          <Image className="protexxa_logo" src={protexxa_logo.src} alt="Protexxa's logo" width={100} height={90}/>
+          <Image className="protexxa_logo" src={process.env.NEXT_PUBLIC_PROTEXXA_LOGO as string} alt="Protexxa's logo" width={100} height={100}/>
           <div className="protexxa-text-ctn">
             <p className="protexxa-text">Protexxa</p>
             <p className='protexxa-date'>Aug 2023 - Aug 2024</p>
@@ -155,15 +149,20 @@ const handleSubmit = (e: React.FormEvent) => {
           <motion.div
             className="certimgs-container"
             initial={{ x: '0%' }}
-            animate={{ x: '-108.6%' }}
+            animate={{ x: '-99%' }}
             transition={{
-              duration: 20,
+              duration: 10,
               ease: 'linear',
               repeat: Infinity,
               repeatType: 'loop',
             }}>
-            {[az104, SecurityPlus, az900, az104, SecurityPlus, az900].map((logo) => (
-              <Image src={logo.src} key={logo.src} alt="cert logos" className="certimgs" width={270} height={400}/>
+            {[{ src: process.env.NEXT_PUBLIC_AZ104_LOGO as string, id: 'az104' },
+              { src: process.env.NEXT_PUBLIC_SECURITYPLUS_LOGO as string, id: 'securityPlus' },
+              { src: process.env.NEXT_PUBLIC_AZ900_LOGO as string, id: 'az900' },
+              { src: process.env.NEXT_PUBLIC_AZ104_LOGO as string, id: 'az104-2' },
+              { src: process.env.NEXT_PUBLIC_SECURITYPLUS_LOGO as string, id: 'securityPlus-2' },
+              { src: process.env.NEXT_PUBLIC_AZ900_LOGO as string, id: 'az900-2' }].map((logo) => (
+              <Image src={logo.src} key={logo.id} alt="cert logos" className="certimgs" width={400} height={400}/>
             ))}
           </motion.div>
         </div>

@@ -1,4 +1,5 @@
 "use client";
+import "./globals.css";
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link'
@@ -56,6 +57,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body>
         <input 
           type="checkbox" 
