@@ -378,7 +378,7 @@ body::before {
 }
 
 .send-button:hover {
-  background-color: var(--main-accent-color);
+  background-color: #de8d5e;
 }
 
 .inputchat:placeholder-shown {
@@ -750,6 +750,7 @@ img {
   background: linear-gradient(270deg, #ff77e0,
       #ff77ab, #ff6a77, #ffa977, #ff9050, #ff7950, #ffa977);
   background-size: 400% 400%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientAnimation 3s ease;
@@ -1028,4 +1029,8 @@ img {
   font-weight: 600;
   margin: 13px;
   transition: transform 1s;
+}
+
+.submit-contact-btn:hover {
+  background-color: #de8d5e;
 }
