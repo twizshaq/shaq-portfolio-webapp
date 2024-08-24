@@ -19,6 +19,20 @@ jobs:
         with:
           submodules: true
           lfs: false
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the app
+        env:
+          NEXT_PUBLIC_GEMINI_API_KEY: ${{ secrets.NEXT_PUBLIC_GEMINI_API_KEY }}
+          NEXT_PUBLIC_GEMINI_SYSTEM_INSTRUCTIONS: ${{ secrets.NEXT_PUBLIC_GEMINI_SYSTEM_INSTRUCTIONS }}
+          NEXT_PUBLIC_AZ104_LOGO: ${{ vars.NEXT_PUBLIC_AZ104_LOGO }}
+          NEXT_PUBLIC_AZ900_LOGO: ${{ vars.NEXT_PUBLIC_AZ900_LOGO }}
+          NEXT_PUBLIC_MEMOJI_ICON: ${{ vars.NEXT_PUBLIC_MEMOJI_ICON }}
+          NEXT_PUBLIC_PROTEXXA_LOGO: ${{ vars.NEXT_PUBLIC_PROTEXXA_LOGO }}
+          NEXT_PUBLIC_SECURITYPLUS_LOGO: ${{ vars.NEXT_PUBLIC_SECURITYPLUS_LOGO }}
+          NEXT_PUBLIC_ZELYXAI_LOGO: ${{ vars.NEXT_PUBLIC_ZELYXAI_LOGO }}
+        run: npm run build
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
