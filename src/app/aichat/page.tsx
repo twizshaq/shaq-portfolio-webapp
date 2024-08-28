@@ -71,7 +71,7 @@ export default function Aichat() {
 
     return (
         <div className="aimain">
-            <button className="ainame"><img src={process.env.NEXT_PUBLIC_ZELYXAI_LOGO as string} alt="zelyx ai logo" /></button>
+            <button className="ainame"><img src={zelyxai.src} alt="zelyx ai logo" /></button>
             <div className="aioutput">
                 {messages.map((msg, index) => (
                     <div key={index} className={msg.isAI ? "aiMessage" : "userMessage"}>

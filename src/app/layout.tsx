@@ -1,6 +1,7 @@
 "use client";
 import "./globals.css";
-import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { CgFileDocument } from "react-icons/cg";
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
@@ -95,7 +96,7 @@ export default function RootLayout({
         <footer className="footer">
           <div className="footersocials">
             <span className="linkedIn"><a href="https://www.linkedin.com/in/shaquonhamilton/"><FaLinkedin /></a></span>
-            <span className="github"><a href="https://github.com/twizshaq"><FaGithubSquare /></a></span>
+            <span className="resume-download"><a href="https://shaqportfoliostorage.blob.core.windows.net/resume/resume-for-webapp.pdf" target="_blank"><CgFileDocument /></a></span>
           </div>
           <span className="copyright">© Shaquon Hamilton 2024.</span>
         </footer>

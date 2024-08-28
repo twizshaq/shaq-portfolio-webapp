@@ -8,6 +8,11 @@ import { Typewriter } from '@/app/components/job-title';
 import { AnimatedSection } from '@/app/components/animated-section';
 import Image from 'next/image';
 import { BlobServiceClient } from "@azure/storage-blob";
+import protexxa_logo from "@/app/assets/protexxa_logo.png"
+import az900 from "@/app/assets/az900.png"
+import az104 from "@/app/assets/az104.png"
+import memoji_icon from "@/app/assets/memoji_icon 2.png"
+import SecurityPlus from "@/app/assets/SecurityPlus.png"
 
 export default function Home() {
   const [showDetails, setShowDetails] = useState(false);
@@ -19,7 +24,6 @@ export default function Home() {
   const contactMessageRef = useRef<HTMLTextAreaElement>(null);
   const titles = [
     "Junior SOC Analyst",
-    "A.I & ML Enthusiast",
     "Junior Programmer"
   ];
 
@@ -79,10 +83,10 @@ const handleSubmit = (e: React.FormEvent) => {
         <p className="name">Hi, I'm <span>Shaquon</span></p>
         <p className="jobtitle">I'm a <span><Typewriter titles={titles} speed={150} pause={2000}/></span></p>
         <p className="about">
-          I have one year of hands-on experience as a Security Analyst, working with tools like Splunk, AWS GuardDuty, and Azure. Driven by a passion for technology and cloud computing, I’m eager to expand my expertise into AI, machine learning, cloud engineering and software development. As a quick learner, I’m committed to continuously building my skill set and applying my knowledge to real-world projects. I want this portfolio to reflect my journey, showcasing the projects I’ve worked on, the skills I’ve acquired, and the progress I’m making as I establish a reputable presence.
+          I have one year of hands-on experience as a Security Analyst, working with tools like Splunk, AWS GuardDuty, and Azure. Driven by a passion for technology and cloud computing, I’m eager to expand my expertise into AI, machine learning, cloud engineering and software development. As a quick learner, I’m committed to continuously building my skill set and applying my knowledge to real-world projects. This simple portfolio is to reflect my journey, showcasing the projects I’ve worked on, the skills I’ve acquired, and the progress I’m making as I establish a reputable presence.
         </p>
         </div>
-        <div className="testbox"><Image src={process.env.NEXT_PUBLIC_MEMOJI_ICON as string} alt="memoji icon" width={400} height={400} priority/></div>
+        <div className="testbox"><Image src={memoji_icon} alt="memoji icon" width={400} height={400} priority/></div>
       </div>
 
     <div className="tapered-line"></div>
@@ -93,7 +97,7 @@ const handleSubmit = (e: React.FormEvent) => {
         
         <button>
         <div onClick={() => setShowDetails(!showDetails)}className="protexxa-xp">
-          <Image className="protexxa_logo" src={process.env.NEXT_PUBLIC_PROTEXXA_LOGO as string} alt="Protexxa's logo" width={100} height={100}/>
+          <Image className="protexxa_logo" src={protexxa_logo} alt="Protexxa's logo" width={100} height={100}/>
           <div className="protexxa-text-ctn">
             <p className="protexxa-text">Protexxa</p>
             <p className='protexxa-date'>Aug 2023 - Aug 2024</p>
@@ -119,7 +123,7 @@ const handleSubmit = (e: React.FormEvent) => {
             <ul className="ptx-ul">
             <p className="ptx-subtask1">• Monitored and triaged security alerts using Atlassian OpsGenie, with logs ingested from Splunk.</p>
             <p className="ptx-subtask1">• Investigated alerts that deviated from the norm by utilizing Splunk for deeper insights.</p>
-            <p className="ptx-subtask1">• Collaborated with relevant teams by promptly emailing the responsible parties for follow-up actions.</p>
+            <p className="ptx-subtask1">• Collaborated with relevant teams by promptly emailing the responsible parties for Confirmation.</p>
             </ul>
           </div>
           <div>
@@ -156,12 +160,12 @@ const handleSubmit = (e: React.FormEvent) => {
               repeat: Infinity,
               repeatType: 'loop',
             }}>
-            {[{ src: process.env.NEXT_PUBLIC_AZ104_LOGO as string, id: 'az104' },
-              { src: process.env.NEXT_PUBLIC_SECURITYPLUS_LOGO as string, id: 'securityPlus' },
-              { src: process.env.NEXT_PUBLIC_AZ900_LOGO as string, id: 'az900' },
-              { src: process.env.NEXT_PUBLIC_AZ104_LOGO as string, id: 'az104-2' },
-              { src: process.env.NEXT_PUBLIC_SECURITYPLUS_LOGO as string, id: 'securityPlus-2' },
-              { src: process.env.NEXT_PUBLIC_AZ900_LOGO as string, id: 'az900-2' }].map((logo) => (
+            {[{ src: az104, id: 'az104' },
+              { src: SecurityPlus, id: 'securityPlus' },
+              { src: az900, id: 'az900' },
+              { src: az104, id: 'az104-2' },
+              { src: SecurityPlus, id: 'securityPlus-2' },
+              { src: az900, id: 'az900-2' }].map((logo) => (
               <Image src={logo.src} key={logo.id} alt="cert logos" className="certimgs" width={400} height={400}/>
             ))}
           </motion.div>
