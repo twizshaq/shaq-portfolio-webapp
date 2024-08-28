@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { TbSend } from "react-icons/tb";
-import zelyxai from "@/app/assets/zelyxai.png";
+import Zelyxai from "@/app/assets/Zelyxai.png";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { BlobServiceClient } from "@azure/storage-blob";
 
@@ -71,7 +71,7 @@ export default function Aichat() {
 
     return (
         <div className="aimain">
-            <button className="ainame"><img src={zelyxai.src} alt="zelyx ai logo" /></button>
+            <button className="ainame"><img src={Zelyxai.src} alt="zelyx ai logo" /></button>
             <div className="aioutput">
                 {messages.map((msg, index) => (
                     <div key={index} className={msg.isAI ? "aiMessage" : "userMessage"}>
