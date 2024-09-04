@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { TbSend } from "react-icons/tb";
+import { VscSparkleFilled } from "react-icons/vsc";
 import Zelyxai from "@/app/assets/Zelyxai.png";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { BlobServiceClient } from "@azure/storage-blob";
@@ -71,31 +71,39 @@ export default function Aichat() {
 
     return (
         <div className="aimain">
-            <button className="ainame"><img src= "https://shaqportfoliostorage.blob.core.windows.net/images/zelyxai.png" alt="zelyx ai logo" /></button>
-            <div className="aioutput">
-                {messages.map((msg, index) => (
-                    <div key={index} className={msg.isAI ? "aiMessage" : "userMessage"}>
-                        <p>{msg.text}</p>
-                    </div> ))}
-                {loading && (
-                    <div className="loading-indicator">
-                        <div className="loading-bar"></div>
-                        <div className="loading-bar"></div>
-                        <div className="loading-bar"></div>
-                    </div>
-                )}
+            <button className="ainameimg"><img src= "https://shaqportfoliostorage.blob.core.windows.net/images/zelyxai.png" alt="zelyx ai logo" /></button>
+            <div className="ai-comp-ctn">
+                <div className="aioutput">
+                    {messages.map((msg, index) => (
+                        <div key={index} className={msg.isAI ? "aiMessage" : "userMessage"}>
+                            <p>{msg.text}</p>
+                        </div> ))}
+                    {loading && (
+                        <div className="loading-indicator">
+                            <div className="loading-bar"></div>
+                            <div className="loading-bar"></div>
+                            <div className="loading-bar"></div>
+                        </div>
+                    )}
+                </div>
+                <form className="aiquestbox" onSubmit={(e) => e.preventDefault()}>
+                    <input
+                        className="inputchat"
+                        type="text"
+                        placeholder="Ask a question!"
+                        value={userMessage}
+                        onChange={(e) => setUserMessage(e.target.value)}
+                        onKeyPress={handleKeyPress}
+                    />
+                    <span className="send-button" onClick={handleOutgoingChat}><span className="VscSparkleFilled"><VscSparkleFilled /></span></span>
+                </form>
+                <footer className="ai-footer">
+                    <span className="ai-copyright">© Shaquon Hamilton 2024.</span>
+                </footer>
             </div>
-            <form className="aiquestbox" onSubmit={(e) => e.preventDefault()}>
-                <input
-                    className="inputchat"
-                    type="text"
-                    placeholder="Ask a question!"
-                    value={userMessage}
-                    onChange={(e) => setUserMessage(e.target.value)}
-                    onKeyPress={handleKeyPress}
-                />
-                <span className="send-button" onClick={handleOutgoingChat}><TbSend/></span>
-            </form>
+        {/* <footer className="ai-footer">
+            <span className="ai-copyright">© Shaquon Hamilton 2024.</span>
+        </footer> */}
         </div>
     );
 }

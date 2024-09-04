@@ -1,6 +1,7 @@
 "use client";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
+import { CgFileDocument } from "react-icons/cg";
 import { motion, AnimatePresence} from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import emailjs from '@emailjs/browser';
@@ -72,6 +73,9 @@ const handleSubmit = (e: React.FormEvent) => {
 
   return (
     <div className="homeMain">
+        <span className="home-page-img">
+          <img src= "https://shaqportfoliostorage.blob.core.windows.net/images/homepagemainimg.png" alt="Home Page img" />
+        </span>
           <motion.div
       initial={{ opacity: 0, y: 40}}
       animate={{ opacity: 1, y: 0}}
@@ -187,6 +191,13 @@ const handleSubmit = (e: React.FormEvent) => {
           <button ref={contactBtnRef} type="submit" className="submit-contact-btn">Submit</button>
         </form>
       </div>
+        <footer className="footer-h-pg">
+          <div className="footersocials">
+            <span className="linkedIn"><a href="https://www.linkedin.com/in/shaquonhamilton/"><FaLinkedin /></a></span>
+            <span className="resume-download"><a href="https://shaqportfoliostorage.blob.core.windows.net/resume/resume-for-webapp.pdf" target="_blank"><CgFileDocument /></a></span>
+          </div>
+          <span className="copyright">© Shaquon Hamilton 2024.</span>
+        </footer>
       </motion.div>
     </div>
   );

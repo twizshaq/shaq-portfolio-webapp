@@ -23,37 +23,41 @@ export default function RootLayout({
 
   const pathname = usePathname();
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (navRef.current && !navRef.current.contains(event.target as Node) && isNavOpen) {
-        setIsNavOpen(false);
-      }
-    };
-
-    const handleScroll = () => {
-      if (isNavOpen) {
-        setIsNavOpen(false); 
-      }
-    };
-
-    // Add/remove event listeners based on isNavOpen
-    if (isNavOpen) {
-      document.addEventListener('click', handleClickOutside);
-      window.addEventListener('scroll', handleScroll);
-    } else {
-      document.removeEventListener('click', handleClickOutside);
-      window.removeEventListener('scroll', handleScroll); 
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    const toggleButton = document.querySelector('.burgerlabel');
+    
+    // Close the nav if clicking outside and not on the toggle button
+    if (
+      toggleButton &&
+      navRef.current &&
+      !navRef.current.contains(event.target as Node) &&
+      !toggleButton.contains(event.target as Node)
+    ) {
+      setIsNavOpen(false);
     }
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-      window.removeEventListener('scroll', handleScroll); 
-    };
-  }, [isNavOpen]); 
-
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
   };
+
+  const handleScroll = () => {
+    if (isNavOpen) {
+      setIsNavOpen(false);
+    }
+  };
+
+  // Attach the listeners
+  document.addEventListener('click', handleClickOutside);
+  window.addEventListener('scroll', handleScroll);
+
+  return () => {
+    // Cleanup listeners on unmount
+    document.removeEventListener('click', handleClickOutside);
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, [isNavOpen]);
+
+const toggleNav = () => {
+  setIsNavOpen((prev) => !prev);
+};
 
 
   return (
@@ -92,14 +96,10 @@ export default function RootLayout({
               </span>
             </Link>
           </nav>
+        {/* <footer className="footer">
+            <span className="copyright">© Shaquon Hamilton 2024.</span>
+        </footer> */}
         </div>
-        <footer className="footer">
-          <div className="footersocials">
-            <span className="linkedIn"><a href="https://www.linkedin.com/in/shaquonhamilton/"><FaLinkedin /></a></span>
-            <span className="resume-download"><a href="https://shaqportfoliostorage.blob.core.windows.net/resume/resume-for-webapp.pdf" target="_blank"><CgFileDocument /></a></span>
-          </div>
-          <span className="copyright">© Shaquon Hamilton 2024.</span>
-        </footer>
         {children}
       </body>
     </html>
