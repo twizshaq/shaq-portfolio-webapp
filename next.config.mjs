@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['myportfoliocdnendpoint-anarfba5eg2chhte.z02.azurefd.net'], // Correct key here
+        domains: ['myportfoliocdnendpoint-anarfba5egc2hthe.z02.azurefd.net'], // Correct key here
     },
 };
 

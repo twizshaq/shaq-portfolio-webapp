@@ -24,7 +24,7 @@ export default function Projects() {
     return (
         <div className="projectMain">
             <span className="project-page-img">
-                <img src= "https://myportfoliocdnendpoint-anarfba5eg2chhte.z02.azurefd.net/images/projectspageimg.png" alt="Projects Page img" />
+                <img src= "https://myportfoliocdnendpoint-anarfba5egc2hthe.z02.azurefd.net/images/projectspageimg.png" alt="Projects Page img" />
             </span>
             <div className="projects-comp-ctn">
                 <div className="project-nav">
@@ -44,7 +44,7 @@ export default function Projects() {
             <div className="projects">
                 <div className="temp-ctn">
                     <span className="projects-coming-soon">
-                        <img src= "https://myportfoliocdnendpoint-anarfba5eg2chhte.z02.azurefd.net/images/shadow.png" alt="Projects Page img" />
+                        <img src= "https://myportfoliocdnendpoint-anarfba5egc2hthe.z02.azurefd.net/images/shadow.png" alt="Projects Page img" />
                     </span>
                 </div>
             </div>
