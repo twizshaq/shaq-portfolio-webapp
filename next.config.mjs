@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['shaqportfoliostorage.blob.core.windows.net'], // Correct key here
+        domains: ['myportfoliocdnendpoint-anarfba5eg2chhte.z02.azurefd.net'], // Correct key here
     },
 };
 

@@ -127,7 +127,7 @@ body::before {
 }
 }
 
-.sort-arrows:hover, .filter-settings:hover, .bookmrk-icon:hover {
+.sort-arrows:hover, .heart-icon:hover, .bookmrk-icon:hover {
   cursor: pointer;
 }
 
