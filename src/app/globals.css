@@ -25,25 +25,44 @@ body {
   overflow-y: auto;
 }
 
-body::before {
+/* body::before {
   content: "";
-  position: absolute; /* Changed from absolute to fixed */
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100dvh; /* Ensures it covers the full viewport */
+  height: 100dvh;
   background: linear-gradient(0deg, rgba(32, 32, 60, .75), rgba(32, 32, 60, .75)),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 380 380' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   pointer-events: none;
-  background-size: cover; /* Ensures background covers the area */
+  background-size: cover;
   z-index: -1;
   filter: contrast(140%) brightness(100%);
-}
+} */
 
 .projectMain {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 220px;
+}
+
+.projectMain::before {
+  content: "";
+    position: absolute;
+    /* Changed from absolute to fixed */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    /* Ensures it covers the full viewport */
+    background: linear-gradient(0deg, rgba(32, 32, 60, .75), rgba(32, 32, 60, .75)),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 380 380' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    background-size: cover;
+    /* Ensures background covers the area */
+    z-index: -1;
+    filter: contrast(140%) brightness(100%);
 }
 
 .project-nav {
@@ -127,7 +146,7 @@ body::before {
 }
 }
 
-.sort-arrows:hover, .heart-icon:hover, .bookmrk-icon:hover {
+.heart-icon:hover, .bookmrk-icon:hover {
   cursor: pointer;
 }
 
@@ -143,18 +162,105 @@ body::before {
 }
 
 .projects {
-  justify-content: center;
-  align-items: center;
+  position: relative;
   display: flex;
-  margin-top: 170px;
-  margin-bottom: 20px;
-  max-width: 900px;
-  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 30px;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  justify-content: center;
+  /* border-width: 2.5px; */
+  /* border-radius: 15px; */
+  height: 100vh;
+  min-height: 220px;
+  /* max-height: 90%; */
+  /* margin-bottom: 30px; */
+  margin-top: 200px;
+  max-width: 1200px;
+  /* flex-grow: 1; */
   width: 90vw;
   overflow-y: auto;
-  /* mask-image: linear-gradient(to bottom, transparent 0%, black 7%, black 95%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 2%, black 98%, transparent 100%);
   mask-composite: intersect;
-  -webkit-mask-composite: intersect; */
+  -webkit-mask-composite: intersect;
+  /* align-items: flex-start; */
+  /* background-color: red; */
+}
+
+@media (max-width: 575px) {
+.projects {
+    top: -5px;
+    /* gap: 0px; */
+  }
+.project-img {
+  top: 7px;
+}
+.phishing-simulator .project-img {
+  top: 0px;
+}
+}
+
+.portfolio-project-ctn {
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; */
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  margin-top: 20px;
+  width: 370px;
+  height: 200px;
+  border-radius: 40px;
+  border-color: white;
+  border-width: 3px;
+  /* background-color: red; */
+  overflow: hidden;
+}
+
+.phishing-simulator {
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; */
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 370px;
+  height: 200px;
+  border-radius: 40px;
+  border-color: white;
+  border-width: 3px;
+  /* background-color: red; */
+  overflow: hidden;
+}
+
+/* .phishing-simulator .project-name-ctn {
+  margin-top: -90px;
+  line-height: 40px;
+} */
+
+.portfolio-project-ctn:hover {
+  cursor: pointer;
+}
+
+.project-name-ctn {
+  position: relative;
+  margin-left: 25px;
+  margin-top: -55px;
+  text-align: start;
+  font-weight: 700;
+  font-size: 30px;
+  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.project-img {
+  position: relative;
+  /* object-fit: cover; */
+  /* top: 7px; */
+}
+
+.not-found {
+  position: relative;
+  font-weight: 700;
+  font-size: 25px;
+  top: 40%;
+  /* align-self: center; */
 }
 
 .temp-ctn {
@@ -164,6 +270,31 @@ body::before {
   flex-direction: column;
   font-size: 1.5rem;
   top: -50px;
+}
+
+.projects-footer {
+color: white;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px 0;
+  /* Adjust for better spacing */
+  /* position: relative; */
+  /* Footer will now flow naturally after the projects section */
+  /* margin-top: 40px; */
+  /* Add margin to ensure there's space between projects and footer */
+  z-index: 1;
+}
+
+.projects-copyright {
+  color: white;
+  font-size: .8rem;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  /* padding-bottom: 10px; */
 }
 
 .projects-coming-soon {
@@ -210,15 +341,104 @@ body::before {
   left: 30px;
   width: 150px;
 }
-
 }
 
-.projects-footer {
-  color: white;
-  font-size: .8rem;
+.bck-btn {
+  position: relative;
+  top: 100px;
+  border-color: white;
+  border-width: 1.5px;
+  border-radius: 20px;
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: position 0.3s ease;
+}
+
+.bck-btn:hover{
+  background: rgba(255, 0, 43, 0.596);
+}
+
+.bck-btn.fixed {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+.bck-btn-text {
   position: absolute;
-  bottom: 10px;
-  z-index: 1;
+  right: 13px;
+  bottom: 0px;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.bck-arrow {
+  position: absolute;
+  font-size: 25px;
+  left: 10px;
+  bottom: 6px;
+}
+
+@media (max-width: 575px) {
+  .bck-btn{
+    top: 20px;
+  }
+}
+
+.main-portfolio-writeup{
+  justify-content: center;
+  align-items: center;
+}
+
+.main-portfolio-writeup::before {
+  content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(32, 32, 60, .75), rgba(32, 32, 60, .75)),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 580 580' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    /* background-size: cover; */
+    z-index: -1;
+    filter: contrast(140%) brightness(100%);
+}
+
+.main-portfolio-writeup-body {
+  position: relative;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    /* border-width: 2.5px; */
+    /* border-radius: 15px; */
+    height: 100%;
+    /* max-height: 90%; */
+    /* margin-bottom: 30px; */
+    margin-top: 120px;
+    max-width: 900px;
+    width: 90vw;
+    overflow-y: auto;
+}
+
+@media (max-width: 575px) {
+  .main-portfolio-writeup-body {
+  margin-top: 70px;
+}
+}
+
+.mainheaders {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.secondaryheaders {
+  font-weight: 700;
+  font-size: 20px;
+  /* line-height: 1.2; */
 }
 
 .navbartoggle {
@@ -232,7 +452,7 @@ body::before {
 }
 
 .navigator {
-  border-radius: 20px;
+  border-radius: 30px;
   border-width: 1px;
   border-color: white;
   height: 47px;
@@ -340,6 +560,24 @@ body::before {
   min-height: 100vh;
 }
 
+.aimain::before {
+  content: "";
+  position: absolute;
+  /* Changed from absolute to fixed */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  /* Ensures it covers the full viewport */
+  background: linear-gradient(0deg, rgba(32, 32, 60, .75), rgba(32, 32, 60, .75)),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 380 380' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  background-size: cover;
+  /* Ensures background covers the area */
+  z-index: -1;
+  filter: contrast(140%) brightness(100%);
+}
+
 .ainameimg {
   color: rgba(255, 255, 255, 0);
   z-index: 0;
@@ -422,7 +660,7 @@ body::before {
 
 .inputchat {
   border-color: white;
-  border-radius: 15px;
+  border-radius: 20px;
   border-width: 1.5px;
   background-color: rgba(0, 0, 0, 0.2);
   color: white;

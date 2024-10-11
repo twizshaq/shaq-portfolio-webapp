@@ -71,7 +71,7 @@ export default function Aichat() {
 
     return (
         <div className="aimain">
-            <button className="ainameimg"><img src= "https://myportfoliocdnendpoint-anarfba5egc2hthe.z02.azurefd.net/images/zelyxai.png" alt="zelyx ai logo" /></button>
+            <button className="ainameimg"><img src= "https://shaqportfoliostorage.blob.core.windows.net/images/zelyxai.png" alt="zelyx ai logo" /></button>
             <div className="ai-comp-ctn">
                 <div className="aioutput">
                     {messages.map((msg, index) => (
