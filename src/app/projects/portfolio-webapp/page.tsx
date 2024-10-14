@@ -26,7 +26,7 @@ export default function Portfolioproject() {
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• GitHub:</span> For source control, versioning, and deploying the web app via GitHub Actions.</p>
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• Google AI Studio:</span> For integrating a customizable AI chatbot that interacts with users.</p>
                 <br />
-                <Image src="https://shaqportfoliostorage.blob.core.windows.net/images/tech-stack-icons.png" alt="Access Blocked Image" width={450} height={0} style={{ display: 'block', 
+                <Image src="https://portfolio-img-pull-zone.b-cdn.net/tech-stack-icons.png" alt="Access Blocked Image" width={450} height={0} style={{ display: 'block', 
     margin: '0 auto'}}/>
                 <br /><br />
                 <p className="secondaryheaders">Challenges</p>

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['shaqportfoliostorage.blob.core.windows.net'], // Correct key here
+        domains: ['portfolio-img-pull-zone.b-cdn.net'], // Correct key here
     },
 };
 

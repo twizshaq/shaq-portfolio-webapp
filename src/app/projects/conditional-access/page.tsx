@@ -24,7 +24,7 @@ export default function Conditionalaccessproject() {
                 <p className="secondaryheaders">Use Case</p>
                 <p>Phishing attacks are one of the most common ways attackers steal user credentials. In this use case, a phishing simulation is designed to test whether credentials obtained through a fake login page could be used by a malicious actor.</p>
                 <br />
-                <Image src="https://shaqportfoliostorage.blob.core.windows.net/images/phishing-email.png" alt="Access Blocked Image" width={650} height={0} style={{ display: 'block', 
+                <Image src="https://portfolio-img-pull-zone.b-cdn.net/phishing-email.png" alt="Access Blocked Image" width={650} height={0} style={{ display: 'block', 
     margin: '0 auto'}}/>
                 <br />
                 <p>The conditional access policy adds an extra security layer by restricting successful logins to specific network locations, such as the trusted home office network. Even if credentials are compromised, the attacker cannot log in unless they are connected to this predefined network.</p>
@@ -45,7 +45,7 @@ export default function Conditionalaccessproject() {
                 <p className="secondaryheaders">Outcome</p>
                 <p>The implemented Conditional Access Policy resulted in a substantial improvement in security posture, as it blocked any login attempts from locations outside the predefined home network. This successfully mitigates the risk of unauthorized access, even in cases where credentials are stolen through phishing.</p>
                 <br />
-                <Image src="https://shaqportfoliostorage.blob.core.windows.net/images/access-blocked.png" alt="Access Blocked Image" width={650} height={0} style={{ display: 'block', 
+                <Image src="https://portfolio-img-pull-zone.b-cdn.net/access-blocked.png" alt="Access Blocked Image" width={650} height={0} style={{ display: 'block', 
     margin: '0 auto'}}/>
                 <br />
                 <p className="secondaryheaders">Lessons Learned</p>

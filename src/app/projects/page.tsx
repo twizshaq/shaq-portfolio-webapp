@@ -22,9 +22,9 @@ export default function Projects() {
 
     // Array of projects (you can expand this with more projects)
     const projects = [
-        { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/portfolio-webapp-project-pic.png" },
+        { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "https://portfolio-img-pull-zone.b-cdn.net/portfolio-webapp-project-pic.png" },
         // Add more projects here when ready
-        { name: "Conditional Access", link: "/projects/conditional-access", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/phishing-conditional-access-project-pic.png", alt: "image of blank"}
+        { name: "Conditional Access", link: "/projects/conditional-access", imgSrc: "https://portfolio-img-pull-zone.b-cdn.net/phishing-conditional-access-project-pic.png", alt: "image of blank"}
     ];
     // const favprojects = [
     //     { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "/portfolio-webapp-project-pic.png" },
@@ -40,7 +40,7 @@ export default function Projects() {
     return (
         <div className="projectMain">
             <span className="project-page-img">
-                <img src="https://shaqportfoliostorage.blob.core.windows.net/images/projectspageimg.png" alt="Projects Page img" />
+                <img src="https://portfolio-img-pull-zone.b-cdn.net/projectspageimg.png" alt="Projects Page img" />
             </span>
             <div className="projects-comp-ctn">
                 <div className="project-nav">
