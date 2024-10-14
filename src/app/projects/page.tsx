@@ -24,7 +24,7 @@ export default function Projects() {
     const projects = [
         { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/portfolio-webapp-project-pic.png" },
         // Add more projects here when ready
-        // { name: "Conditional Access", link: "/projects/conditional-access", imgSrc: "/phishing-conditional-access-project-pic.png" }
+        { name: "Conditional Access", link: "/projects/conditional-access", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/phishing-conditional-access-project-pic.png", alt: "image of blank"}
     ];
     // const favprojects = [
     //     { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "/portfolio-webapp-project-pic.png" },
