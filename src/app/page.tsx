@@ -1,6 +1,4 @@
 "use client";
-import { Particles } from "@tsparticles/react";
-import { ISourceOptions } from "tsparticles-engine";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
