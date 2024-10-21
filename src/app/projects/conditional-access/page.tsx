@@ -56,7 +56,7 @@ export default function Conditionalaccessproject() {
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• Continuous Improvement:</span> Future policies could incorporate Multi-Factor Authentication (MFA) or device compliance policies to further enhance security.</p>
                 <br />
             </div>
-                <footer className="ai-footer">
+                <footer className="writeup-footer">
                     <span className="ai-copyright">© Shaquon Hamilton 2024.</span>
                 </footer>
         </div>

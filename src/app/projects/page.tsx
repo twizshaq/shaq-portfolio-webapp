@@ -22,9 +22,9 @@ export default function Projects() {
 
     // Array of projects (you can expand this with more projects)
     const projects = [
-        { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "https://portfolio-img-pull-zone.b-cdn.net/portfolio-webapp-project-pic.png" },
+        { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "https://portfolio-img-pull-zone.b-cdn.net/portfolio-webapp-project-pic.png", alt: "Portfolio Web-App Thumbnail"},
         // Add more projects here when ready
-        { name: "Conditional Access", link: "/projects/conditional-access", imgSrc: "https://portfolio-img-pull-zone.b-cdn.net/phishing-conditional-access-project-pic.png", alt: "image of blank"}
+        { name: "Conditional Access", link: "/projects/conditional-access", imgSrc: "https://portfolio-img-pull-zone.b-cdn.net/phishing-conditional-access-project-pic.png", alt: "Conditional Access Thumbnail"}
     ];
     // const favprojects = [
     //     { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "/portfolio-webapp-project-pic.png" },
@@ -75,10 +75,11 @@ export default function Projects() {
                             </div>
                         ))
                     ) : (
-                        <div className="not-found">No projects found.</div>
+                        <div className="not-found">No Projects Found.</div>
                     )}
                 </div>
-
+                <div className="project-bg-header"></div>
+                <div className="project-bg-footer"></div>
                 <footer className="ai-footer">
                     <span className="ai-copyright">© Shaquon Hamilton 2024.</span>
                 </footer>

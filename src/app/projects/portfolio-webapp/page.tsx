@@ -57,7 +57,7 @@ export default function Portfolioproject() {
                 <p>One of the most valuable lessons was learning how to troubleshoot and overcome deployment obstacles. The practical knowledge I gained from working with Azure and cloud technologies far exceeds what I learned through certifications alone. This project has not only expanded my technical skills but also instilled a sense of confidence that I can tackle even more complex projects in the future.</p>
                 <br />
             </div>
-                <footer className="ai-footer">
+                <footer className="writeup-footer">
                     <span className="ai-copyright">© Shaquon Hamilton 2024.</span>
                 </footer>
         </div>
