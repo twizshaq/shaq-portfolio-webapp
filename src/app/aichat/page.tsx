@@ -104,7 +104,7 @@ const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
 };
     return (
         <div className="aimain">
-            <button className="ainameimg"><img src= "https://portfolio-img-pull-zone.b-cdn.net/zelyxai.png" alt="zelyx ai logo" /></button>
+            <button className="ainameimg"><img src= "https://shaqportfoliostorage.blob.core.windows.net/images/zelyxai.png" alt="zelyx ai logo" /></button>
             <div className="ai-comp-ctn">
                 {/* <div className="aioutput"> */}
                     {messages.map((msg, index) => (

@@ -176,6 +176,8 @@ body {
   position: relative;
   /* height: 100dvh; */
   /* background-color: red; */
+  padding-bottom: 60px;
+  /* min-height: 800px; */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -213,22 +215,6 @@ body {
 } */
 }
 
-.portfolio-project-ctn {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* flex-wrap: wrap; */
-  /* background-color: rgba(0, 0, 0, 0.2); */
-  /* margin-top: 200px; */
-  width: 365px;
-  height: 200px;
-  border-radius: 40px;
-  border-color: white;
-  border-width: 3px;
-  /* background-color: red; */
-  overflow: hidden;
-  z-index: -1;
-}
-
 .phishing-simulator {
   /* display: flex;
   flex-direction: column;
@@ -250,23 +236,34 @@ body {
   line-height: 40px;
 } */
 
-.portfolio-project-ctn:hover {
+.project-ctn:hover {
   cursor: pointer;
+}
+
+.project-ctn {
+  display: flex;
+  width: 365px;
+  height: 200px;
+  border-radius: 40px;
+  border-color: white;
+  border-width: 3px;
+  overflow: hidden;
 }
 
 .project-name-ctn {
   position: relative;
-  margin-left: 25px;
-  margin-top: -55px;
+  left: 20px;
+  bottom: 45px;
   text-align: start;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 27px;
   text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
+  line-height: 30px;
 }
 
 .project-img {
   position: relative;
-  height: 101%;
+  height: 100%;
   /* object-fit: cover; */
   /* top: 7px; */
 }
@@ -287,12 +284,6 @@ body {
   /* background-color: red; */
   width: 200px;
   /* z-index: 3; */
-}
-
-@media (max-width: 575px) {
-  /* .not-found {
-    top: 375px;
-  } */
 }
 
 .temp-ctn {
@@ -779,7 +770,7 @@ color: white;
 .userMessage {
   background-color: rgba(0, 0, 0, 0.4);
   max-width: 28rem;
-  border-width: 1px;
+  border-width: 1.5px;
   border-color: var(--main-accent-color);
   border-radius: 30px;
   padding: 14px 20px;
@@ -813,14 +804,14 @@ color: white;
 }
 
 .loading-bar {
-  background: linear-gradient(to right, hsl(22, 69%, 66%), #ae521c, var(--main-accent-color));
+  background: linear-gradient(to right, hsl(22, 69%, 66%), #c15b1f, var(--main-accent-color));
   height: 15px;
   margin: 15px 15px 15px 25px;
   max-width: 25rem;
   border-radius: .3rem;
   animation: animate 3.7s linear infinite;
   box-shadow: 0px 0px 10px hsla(22, 84%, 40%, 0.6);
-  transition: .6s;
+  transition: .9s;
 }
 
 .loading-bar:nth-child(2) {
