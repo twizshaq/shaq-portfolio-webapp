@@ -86,7 +86,7 @@ const handleSubmit = (e: React.FormEvent) => {
         <p className="name">Hi, I'm <span>Shaquon</span></p>
         <p className="jobtitle">I'm a <span><Typewriter titles={titles} speed={150} pause={2000}/></span></p>
         <p className="about">
-          I have one year of hands-on experience as a Security Analyst, working with tools like Splunk, AWS GuardDuty, and Azure. Driven by a passion for technology and cloud computing, I’m eager to expand my expertise into AI, Machine Learning, cloud Engineering, Cloud Security and Software Development. As a quick learner, I’m committed to continuously building my skill set and applying my knowledge to real-world projects. This simple portfolio is to reflect my journey, showcasing the projects I’ve worked on, the skills I’ve acquired, and the progress I’m making as I establish a reputable presence.
+          I have one year of hands-on experience as a Security Analyst, working with tools like Splunk, AWS GuardDuty, and Azure. Driven by a passion for technology and cloud computing, I’m eager to expand my expertise into AI, Machine Learning, Cloud Engineering, Cloud Security and Software Development. As a quick learner, I’m committed to continuously building my skill set and applying my knowledge to real-world projects. This simple portfolio is to reflect my journey, showcasing the projects I’ve worked on, the skills I’ve acquired, and the progress I’m making as I establish a reputable presence.
         </p>
         </div>
         <div className="testbox">

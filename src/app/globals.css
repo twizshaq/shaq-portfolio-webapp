@@ -264,7 +264,7 @@ body {
 .project-img {
   position: relative;
   height: 100%;
-  /* object-fit: cover; */
+  object-fit: cover;
   /* top: 7px; */
 }
 
