@@ -8,6 +8,7 @@ import emailjs from '@emailjs/browser';
 import { Typewriter } from '@/app/components/job-title';
 import { AnimatedSection } from '@/app/components/animated-section';
 import Image from 'next/image';
+import Head from 'next/head';
 import { BlobServiceClient } from "@azure/storage-blob";
 import protexxa_logo from "@/app/assets/protexxa_logo.png"
 import az900 from "@/app/assets/az900.png"
@@ -73,6 +74,14 @@ const handleSubmit = (e: React.FormEvent) => {
 
   return (
     <div className="homeMain">
+      <Head>
+        <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/homepagemainimg.png" />
+        <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/memoji_icon 2.png" />
+        <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/protexxa_logo.png" />
+        <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/az104.png" />
+        <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/SecurityPlus.png" />
+        <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/az900.png" />
+      </Head>
         <span className="home-page-img">
           <img src= "https://shaqportfoliostorage.blob.core.windows.net/images/homepagemainimg.png" alt="Home Page img" />
         </span>

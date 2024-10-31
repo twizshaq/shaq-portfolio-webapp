@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { VscSparkleFilled } from "react-icons/vsc";
 import Zelyxai from "@/app/assets/Zelyxai.png";
+import Head from 'next/head';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { BlobServiceClient } from "@azure/storage-blob";
 
@@ -104,6 +105,9 @@ const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
 };
     return (
         <div className="aimain">
+            <Head>
+            <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/zelyxai.png" />
+            </Head>
             <button className="ainameimg"><img src= "https://shaqportfoliostorage.blob.core.windows.net/images/zelyxai.png" alt="zelyx ai logo" /></button>
             <div className="ai-comp-ctn">
                 {/* <div className="aioutput"> */}

@@ -5,6 +5,7 @@ import { HiOutlineBookmark } from "react-icons/hi";
 import { HiBookmark } from "react-icons/hi2";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
+import Head from 'next/head';
 import Link from 'next/link';
 
 export default function Projects() {
@@ -39,6 +40,11 @@ export default function Projects() {
 
     return (
         <div className="projectMain">
+            <Head>
+                <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/projectspageimg.png" />
+                <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/portfolio-webapp-project-pic.png" />
+                <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/phishing-conditional-access-project-pic.png" />
+            </Head>
             <span className="project-page-img">
                 <img src="https://shaqportfoliostorage.blob.core.windows.net/images/projectspageimg.png" alt="Projects Page img" />
             </span>

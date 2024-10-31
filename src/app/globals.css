@@ -264,6 +264,7 @@ body {
 .project-img {
   position: relative;
   height: 100%;
+  width: 100%;
   object-fit: cover;
   /* top: 7px; */
 }
@@ -1164,6 +1165,7 @@ color: white;
   font-weight: 500;
   font-size: 17px;
   padding-top: 10px;
+  line-height: 1.6;
 }
 
 .tapered-line {
