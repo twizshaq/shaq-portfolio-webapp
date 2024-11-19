@@ -805,6 +805,10 @@ color: white;
   border-radius: 22px;
 }
 
+.wis:hover, .wedsh:hover {
+  background-color: rgba(255, 255, 255, .11)
+}
+
 @media (max-width: 575px) {
 .wis, .wedsh {
   margin-top: 20px;
@@ -833,6 +837,29 @@ color: white;
   background-color: rgba(255, 255, 255, .11);
 }
 
+.blobs-ctn {
+  display:flex ;
+  position: absolute;
+  justify-self: center;
+  align-items: center;
+  background-color: red;
+  z-index: 1;
+}
+
+.blob1, .blob2, .blob3, .blob4 {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: pink;
+  filter: blur(10px);
+  --webkit-backdrop-filter: blur(4px);
+  /* z-index: 10; */
+}
+
+#blob2id {
+  background-color: yellow;
+}
+
 .ai-title {
   position: relative;
   margin-top: -3px;
@@ -848,7 +875,6 @@ color: white;
   font-weight: 500;
   bottom: 3px;
 }
-
 
 @media (max-width: 575px) {
 .ai-desc {

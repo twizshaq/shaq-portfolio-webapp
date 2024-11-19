@@ -214,6 +214,12 @@ const handleClickOutside = (event: MouseEvent) => { // Explicitly define 'event'
                     </motion.div>
                 </motion.div>
             )}
+            {/* <div className='blobs-ctn'>
+                <div className='blob1'></div>
+                <div className='blob2' id='blob2id'></div>
+                <div className='blob3'></div>
+                <div className='blob4'></div>
+            </div> */}
             <div className="ai-comp-ctn">
                 {/* <div className="aioutput"> */}
                     {messages.map((msg, index) => (

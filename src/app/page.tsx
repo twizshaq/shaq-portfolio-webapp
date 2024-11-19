@@ -119,7 +119,7 @@ const handleSubmit = (e: React.FormEvent) => {
         </div>
         </button>
 
-        <div className="protexxa-details">
+        {/* <div className="protexxa-details">
           <AnimatePresence>
         {showDetails && (
           <motion.div
@@ -157,7 +157,7 @@ const handleSubmit = (e: React.FormEvent) => {
           </motion.div>
           )}
       </AnimatePresence>
-        </div>
+        </div> */}
       </div>
 
 
