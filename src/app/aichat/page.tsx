@@ -122,6 +122,7 @@ const handleOutgoingChat = () => {
 
     setMessages([...messages, { text: message, isAI: false }]);
     setUserMessage('');
+    setShowWelcome(false);
     fetchAIResponse(message);
 };
 
