@@ -27,14 +27,14 @@ export default function Aichat() {
     const systemInstruction = process.env.NEXT_PUBLIC_GEMINI_SYSTEM_INSTRUCTIONS as string;
 
 const model = genAI.getGenerativeModel({
-    model: "gemini-1.5-flash",
+    model: "gemini-1.5-flash-002",
     systemInstruction: systemInstruction,
 });
 
 const generationConfig = {
     temperature: 1,
     topP: 0.95,
-    topK: 64,
+    topK: 21,
     maxOutputTokens: 8192,
     responseMimeType: "text/plain",
 };
