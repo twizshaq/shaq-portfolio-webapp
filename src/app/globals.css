@@ -582,12 +582,13 @@ color: white;
   display: flex;
   position: relative;
   font-size: 1.8rem;
+  gap: 10px;
   bottom: -70px;
   /* padding-bottom: .5rem; */
 }
 
 .resume-download {
-  padding-left: 10px;
+  /* padding-left: 10px; */
   transition: .25s ease-in-out;
 }
 
@@ -595,8 +596,11 @@ color: white;
   transition: .25s ease-in-out;
 }
 
-.resume-download:hover,
-.linkedIn:hover {
+.Xtwitter {
+  transition: .25s ease-in-out;
+}
+
+.resume-download:hover, .linkedIn:hover, .Xtwitter:hover {
   transform: scale(1.2);
 }
 
@@ -1245,7 +1249,7 @@ color: white;
     position: relative;
     left: 0px;
     padding: 20px;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     text-align: center;
   }
 
@@ -1255,36 +1259,6 @@ color: white;
     margin: 20px;
     flex-shrink: 0;
   }
-
-  .name {
-    font-size: 40px !important;
-  }
-
-  .about-me {
-    margin-top: -50px !important;
-  }
-
-  .tapered-line {
-    width: 80% !important;
-  }
-
-  .jobtitle {
-    font-weight: 700 !important;
-  }
-}
-
-@media (max-width: 1374px) {
-  .certifications {
-    /* background-color: var(--inner-bg-color); */
-    max-width: 475px;
-    width: 80vw;
-    margin: 0 auto 0 auto;
-    position: relative;
-    left: 0px;
-    padding: 20px;
-    margin-top: 50px;
-    text-align: center;
-  }
 }
 
 .homeMain {
@@ -1293,8 +1267,10 @@ color: white;
   align-items: center;
   position: relative;
   /* margin: 30px; */
+  /* background-color: red; */
   /* max-width: 1500px; */
   width: 100%;
+  /* max-width: 1500px; */
   padding: 30px 0 90px 0;
   overflow: hidden;
   min-height: 100vh;
@@ -1318,40 +1294,146 @@ color: white;
 
 .abt-me-ctn {
   position: relative;
+  /* background-color: red; */
+  max-width: 1600px;
   display: flex;
   flex-wrap: wrap;
-  padding-left: 30px;
-  padding-right: 30px;
-  align-self: center;
+  /* padding-left: 0px; */
+  /* padding-right: 0px; */
+  /* align-self: flex-start; */
+  width: 100vw;
+  /* height: 700px; */
   justify-content: center;
   column-gap: 50px;
+  /* margin-left: 30px; */
   margin-bottom: 50px;
   margin-top: 110px;
 }
 
 .about-me {
   /* background-color: var(--inner-bg-color); */
-  max-width: 625px;
-  width: 90vw;
-  padding: 10px;
-  box-sizing: border-box;
+  /* max-width: 40vw; */
+  /* width: 90vw; */
+  /* padding: 10px; */
+  /* align-self: flex-start; */
+  /* background-color: #ff6a77; */
+  /* box-sizing: border-box; */
   position: relative;
+  /* margin: 0 200px; */
+  text-align: center;
+  /* margin-left: 40px; */
   margin-bottom: 50px;
   margin-top: 0px;
 }
 
+.about {
+  /* position: relative; */
+  font-weight: 500;
+  font-size: 1rem;
+  /* padding: 0px 20px; */
+  /* background-color: blue; */
+  /* margin: 0px 200px; */
+  /* padding-top: 10px; */
+  justify-self: center;
+  max-width: 900px;
+  line-height: 1.6;
+}
+
 .testbox {
   /* background-color: var(--inner-bg-color); */
-  width: 400px;
+  /* width: 800px; */
+  /* justify-self: center; */
+  /* background-color: pink; */
+  /* position: relative; */
+  /* align-self: center; */
   /* padding: 20px; */
-  box-sizing: border-box;
-  margin-bottom: 50px;
-  margin-top: auto;
+  /* box-sizing: border-box; */
+  /* margin-bottom: 50px; */
+  /* margin-top: auto; */
+  padding: 0px 5px;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .name {
-  font-size: 70px;
+  font-size: 6rem;
   font-weight: 700;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  /* background-color: red; */
+  gap: 20px;
+}
+
+.name span {
+  background: linear-gradient(270deg, #ff77e0, #c477ff, #7785ff,
+      #ff77ab, #ff6a77, #ffb777, #ff9050, #ff7950, #ffa977);
+  background-size: 400% 400%;
+  background-clip: text;
+  /* font-size: 6rem; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-shadow: gradientAnimation (270deg, #ff77e0, #c477ff, #7785ff,
+      #ff77ab, #ff6a77, #ffb777, #ff9050, #ff7950, #ffa977); */
+  animation: gradientAnimation 5s;
+}
+
+@media (max-width: 1000px) {
+  .about {
+    padding: 0px 70px;
+  }
+
+  .testbox {
+    padding: 0px 70px;
+  }
+
+  .name {
+    font-size: 5rem;
+    /* padding: 0px 70px; */
+  }
+}
+
+@media (max-width: 730px) {
+  .name {
+    flex-direction: column;
+    font-size: 4rem;
+    gap: 0px;
+    line-height: 90px;
+    margin-bottom: 25px;
+  }
+  .name span {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .about {
+    margin-top: -15px;
+    font-size: .95rem;
+    padding: 0px 20px;
+  }
+    .name {
+      font-size: 2.5rem;
+      line-height: 65px;
+      margin-bottom: 10px;
+    }
+    .name span {
+      font-size: 4rem;
+    }
+    .about-me {
+      margin-top: -40px;
+    }
+  
+    .tapered-line {
+      width: 80%;
+    }
+  
+    .jobtitle {
+      font-weight: 700;
+    }
+    .testbox {
+      padding: 0px 10px;
+    }
 }
 
 @keyframes gradientAnimation {
@@ -1368,30 +1450,14 @@ color: white;
   }
 }
 
-.name span {
-  background: linear-gradient(270deg, #ff77e0, #c477ff, #7785ff,
-      #ff77ab, #ff6a77, #ffb777, #ff9050, #ff7950, #ffa977);
-  background-size: 400% 400%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientAnimation 5s;
-}
-
 .jobtitle {
   font-size: 25px;
   font-weight: 600;
+  padding-bottom: 30px;
 }
 
 .jobtitle span {
   color: var(--main-accent-color);
-}
-
-.about {
-  font-weight: 500;
-  font-size: 17px;
-  padding-top: 10px;
-  line-height: 1.6;
 }
 
 .tapered-line {
@@ -1403,22 +1469,33 @@ color: white;
 
 .work-xp-certs {
   position: relative;
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
   margin-bottom: 20px;
 }
 
 .experience {
   /* background-color: var(--inner-bg-color); */
   max-width: 900px;
+  /* background-color: green; */
   width: 90vw;
-  margin: 0 auto 10px auto;
+  /* margin: 0 auto 10px auto; */
+  margin-top: -30px;
   padding: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.xp-ctns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
 .xp-title {
@@ -1435,13 +1512,15 @@ color: white;
 .protexxa-xp {
   background-color: var(--inner-bg-color);
   border-radius: 30px;
-  border-width: 1.5px;
+  border-width: 1.7px;
   border-color: white;
   display: flex;
-  flex-direction: row;
-  max-width: 350px;
+  align-items: center;
+  flex-direction: column;
+  /* max-width: 350px; */
+  /* width: 30vw; */
   overflow: hidden;
-  padding-right: 20px;
+  /* padding-right: 20px; */
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -1450,32 +1529,54 @@ color: white;
 }
 
 .protexxa_logo {
-  height: 90px;
-  width: 110px;
+  height: auto;
+  /* background-color: white;  */
+  width: 120px;
+}
+
+#govt-img {
+  /* height: auto; */
+  /* background-color: white;  */
+  width: 75px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 .protexxa-text-ctn {
   display: flex;
+  padding: 0px 15px 15px 15px;
   flex-direction: column;
+  /* gap: 5px; */
 }
 
 .protexxa-text {
-  font-size: 40px;
-  font-weight: 700;
+  font-size: 1.9rem;
+  margin-top: -20px;
+  font-weight: 800;
+}
+
+.jobTitle {
+  margin-top: -7px;
+  /* margin-bottom: 0px; */
+  /* padding: 0px 0px; */
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
 .protexxa-date {
-  font-size: 15px;
-  margin-top: -5px;
-  align-self: flex-start;
-  letter-spacing: 1px;
-  font-weight: 700;
+  font-size: 1rem;
+  /* margin-top: -5px; */
+  padding: 0 5px;
+  /* padding-bottom: 5px; */
+  align-self: center;
+  /* letter-spacing: 1px; */
+  font-weight: 600;
 }
 
 .protexxa-details {
   max-width: 700px;
   width: 90vw;
-  padding-top: 20px;
+  /* padding-top: 20px; */
   align-items: center;
 }
 
@@ -1539,11 +1640,15 @@ color: white;
 
 .certifications {
   max-width: 475px;
-  width: 80vw;
-  margin: 0px auto 10px auto;
-  position: relative;
-  right: 170px;
-  padding: 20px;
+  /* width: 80vw; */
+  /* margin: 0px auto 10px auto; */
+  /* position: absolute; */
+  /* align-self: center; */
+  /* justify-self: center; */
+  /* background-color: aqua; */
+  /* right: 170px; */
+  margin-top: 70px;
+  padding: 0px 20px 20px 20px;
   text-align: center;
   overflow: hidden;
   mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
@@ -1558,7 +1663,8 @@ color: white;
 
 .certimgs {
   width: auto;
-  height: 90px;
+  height: 80px;
+  /* background-color: aqua; */
   margin: 20px;
   flex-shrink: 0;
 }
