@@ -11,9 +11,6 @@ import Image from 'next/image';
 import { FaXTwitter } from "react-icons/fa6";
 import Head from 'next/head';
 import { BlobServiceClient } from "@azure/storage-blob";
-import memoji_icon from "@/app/assets/memoji_icon 2.png"
-import SecurityPlus from "@/app/assets/SecurityPlus.png"
-import memoji from "@/app/assets/memoji2.png"
 
 export default function Home() {
   const [showDetails, setShowDetails] = useState(false);
@@ -91,7 +88,7 @@ useEffect(() => {
   if (imagesWidth) {
     const duration = (imagesWidth / 100) * 1; // Adjust speed here
     controls.start({
-      x: [60, -imagesWidth], // Animate from start to -imagesWidth (original images width)
+      x: [59, -imagesWidth], // Animate from start to -imagesWidth (original images width)
       transition: {
         duration,
         ease: "linear",
