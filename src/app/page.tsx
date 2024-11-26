@@ -70,48 +70,53 @@ const handleSubmit = (e: React.FormEvent) => {
 
   const certContainerRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
-  const [imagesWidth, setImagesWidth] = useState(0);
+  const [contentWidth, setContentWidth] = useState(0);
   const imageMargin = 40;
 
-  useEffect(() => {
-  if (certContainerRef.current) {
-    const images = certContainerRef.current.querySelectorAll<HTMLImageElement>(".certimgs");
-    const imagesTotalWidth = Array.from(images).reduce(
-      (acc, img) => acc + img.clientWidth + imageMargin,
-      0
-    );
-    setImagesWidth(imagesTotalWidth / 2); // Since the duplicated images are appended, half is the original width
-  }
-}, []);
+    useEffect(() => {
+    if (certContainerRef.current) {
+        const images = certContainerRef.current.querySelectorAll<HTMLImageElement>(".certimgs");
+        if (images.length === 0) return; // Early return if no images
 
-useEffect(() => {
-  if (imagesWidth) {
-    const duration = (imagesWidth / 100) * 1; // Adjust speed here
-    controls.start({
-      x: [59, -imagesWidth], // Animate from start to -imagesWidth (original images width)
-      transition: {
-        duration,
-        ease: "linear",
-        repeat: Infinity,
-      },
-    });
-  }
-}, [controls, imagesWidth]);
+        // Calculate total width of image elements without margins
+        const totalImagesWidth = Array.from(images).reduce((acc, img) => acc + img.offsetWidth, 0);
 
+        // Calculate total width of margins
+        const totalMarginsWidth = (images.length - 1) * imageMargin;
 
+        // Set the total content width
+        setContentWidth(totalImagesWidth + totalMarginsWidth);
+        }
+    }, []);
 
-  const imageData = [{
-      src: "https://shaqportfoliostorage.blob.core.windows.net/images/az104.png",
-      id: "az104"
-  }, {
-      src: "https://shaqportfoliostorage.blob.core.windows.net/images/SecurityPlus.png",
-      id: "securityPlus"
-  }, {
-      src: "https://shaqportfoliostorage.blob.core.windows.net/images/az900.png",
-      id: "az900"
-  }];
-    
-    const duplicatedImageData = imageData.concat(imageData);
+    useEffect(() => {
+        if (contentWidth > 50) {
+            const duration = (contentWidth / 100) * .5; // Adjust speed
+            controls.start({
+                x: [0, -contentWidth / 1.81], // Animate from -contentWidth to 0 for loop
+                transition: {
+                    duration,
+                    ease: "linear",
+                    repeat: Infinity,
+                    repeatType: "loop"
+                },
+            });
+        }
+    }, [controls, contentWidth]);
+
+    const imageData = [{
+        src: "https://shaqportfoliostorage.blob.core.windows.net/images/az104.png",
+        id: "az104"
+    }, {
+        src: "https://shaqportfoliostorage.blob.core.windows.net/images/SecurityPlus.png",
+        id: "securityPlus"
+    }, {
+        src: "https://shaqportfoliostorage.blob.core.windows.net/images/az900.png",
+        id: "az900"
+    }];
+
+  // Duplicate the image data for seamless looping
+  const duplicatedImageData = imageData.concat(imageData);
 
   return (
     <div className="homeMain">
@@ -201,7 +206,7 @@ useEffect(() => {
           <div className="certifications" ref={certContainerRef}>
         <h1 className="certs-title">Certifications</h1>
         <div className="certsfade">
-          <motion.div className="certimgs-container" animate={controls} style={{ x: imagesWidth ? 0 : 'auto' }}>
+          <motion.div className="certimgs-container" animate={controls}>
               {duplicatedImageData.map((logo) => (
                   <Image
                       key={logo.id}
@@ -211,6 +216,7 @@ useEffect(() => {
                       width={200}
                       height={200}
                       style={{ marginRight: `${imageMargin}px` }}
+                      priority
                   />
               ))}
           </motion.div>
