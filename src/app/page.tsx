@@ -70,53 +70,78 @@ const handleSubmit = (e: React.FormEvent) => {
 
   const certContainerRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
-  const [contentWidth, setContentWidth] = useState(0);
+  const [originalContentWidth, setOriginalContentWidth] = useState(0);
   const imageMargin = 40;
+  const [imagesLoaded, setImagesLoaded] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
 
-    useEffect(() => {
-    if (certContainerRef.current) {
-        const images = certContainerRef.current.querySelectorAll<HTMLImageElement>(".certimgs");
-        if (images.length === 0) return; // Early return if no images
-
-        // Calculate total width of image elements without margins
-        const totalImagesWidth = Array.from(images).reduce((acc, img) => acc + img.offsetWidth, 0);
-
-        // Calculate total width of margins
-        const totalMarginsWidth = (images.length - 1) * imageMargin;
-
-        // Set the total content width
-        setContentWidth(totalImagesWidth + totalMarginsWidth);
-        }
-    }, []);
-
-    useEffect(() => {
-        if (contentWidth > 50) {
-            const duration = (contentWidth / 100) * .5; // Adjust speed
-            controls.start({
-                x: [0, -contentWidth / 1.81], // Animate from -contentWidth to 0 for loop
-                transition: {
-                    duration,
-                    ease: "linear",
-                    repeat: Infinity,
-                    repeatType: "loop"
-                },
-            });
-        }
-    }, [controls, contentWidth]);
-
-    const imageData = [{
-        src: "https://shaqportfoliostorage.blob.core.windows.net/images/az104.png",
-        id: "az104"
-    }, {
-        src: "https://shaqportfoliostorage.blob.core.windows.net/images/SecurityPlus.png",
-        id: "securityPlus"
-    }, {
-        src: "https://shaqportfoliostorage.blob.core.windows.net/images/az900.png",
-        id: "az900"
-    }];
+  const imageData = [
+    { src: 'https://shaqportfoliostorage.blob.core.windows.net/images/az104.png', id: 'az104' },
+    { src: 'https://shaqportfoliostorage.blob.core.windows.net/images/SecurityPlus.png', id: 'securityPlus' },
+    { src: 'https://shaqportfoliostorage.blob.core.windows.net/images/az900.png', id: 'az900' },
+  ];
 
   // Duplicate the image data for seamless looping
   const duplicatedImageData = imageData.concat(imageData);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      // Reset imagesLoaded to trigger recalculation
+      setImagesLoaded(0);
+    };
+
+    window.addEventListener('resize', handleResize);
+    // Initial window width
+    setWindowWidth(window.innerWidth);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+  if (certContainerRef.current) {
+    const images = certContainerRef.current.querySelectorAll<HTMLImageElement>('.certimgs');
+    if (images.length === 0) return;
+
+    // Ensure images are loaded
+    const allImagesLoaded = Array.from(images).every((img) => img.naturalWidth > 0);
+    if (!allImagesLoaded) return;
+
+    // Calculate total width of original image elements including margins
+    let totalWidth = 0;
+    Array.from(images)
+      .slice(0, images.length / 2)
+      .forEach((img) => {
+        const style = window.getComputedStyle(img);
+        const width = parseFloat(style.width);
+        const marginLeft = parseFloat(style.marginLeft);
+        const marginRight = parseFloat(style.marginRight);
+        totalWidth += width + marginLeft + marginRight;
+      });
+
+    setOriginalContentWidth(totalWidth);
+
+    // For debugging
+    console.log('Calculated originalContentWidth:', totalWidth);
+  }
+}, [imagesLoaded, windowWidth]);
+
+  useEffect(() => {
+    if (originalContentWidth > 0) {
+      const duration = (originalContentWidth / 100) * 0.5; // Adjust speed as needed
+      controls.start({
+        x: [0, -originalContentWidth],
+        transition: {
+          repeat: Infinity,
+          repeatType: 'loop',
+          duration,
+          ease: 'linear',
+        },
+      });
+    }
+  }, [controls, originalContentWidth]);
 
   return (
     <div className="homeMain">
@@ -207,19 +232,22 @@ const handleSubmit = (e: React.FormEvent) => {
         <h1 className="certs-title">Certifications</h1>
         <div className="certsfade">
           <motion.div className="certimgs-container" animate={controls}>
-              {duplicatedImageData.map((logo) => (
-                  <Image
-                      key={logo.id}
-                      src={logo.src}
-                      alt="cert logos"
-                      className="certimgs"
-                      width={200}
-                      height={200}
-                      style={{ marginRight: `${imageMargin}px` }}
-                      priority
-                  />
-              ))}
-          </motion.div>
+          {duplicatedImageData.map((logo, index) => (
+            <Image
+              key={`${logo.id}-${index}`}
+              src={logo.src}
+              alt="cert logos"
+              className="certimgs"
+              width={200}
+              height={200}
+              style={{ marginRight: `${imageMargin}px` }}
+              priority
+              onLoadingComplete={() => {
+                setImagesLoaded((prev) => prev + 1);
+              }}
+            />
+          ))}
+        </motion.div>
       </div>
     </div>
 

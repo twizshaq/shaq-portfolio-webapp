@@ -1534,14 +1534,6 @@ color: white;
   width: 120px;
 }
 
-#govt-img {
-  /* height: auto; */
-  /* background-color: white;  */
-  width: 75px;
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
-
 .protexxa-text-ctn {
   display: flex;
   padding: 0px 15px 15px 15px;
@@ -1640,13 +1632,6 @@ color: white;
 
 .certifications {
   max-width: 475px;
-  /* width: 80vw; */
-  /* margin: 0px auto 10px auto; */
-  /* position: absolute; */
-  /* align-self: center; */
-  /* justify-self: center; */
-  /* background-color: aqua; */
-  /* right: 170px; */
   margin-top: 70px;
   padding: 0px 20px 20px 20px;
   text-align: center;
@@ -1656,17 +1641,31 @@ color: white;
 
 .certimgs-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  /* Align images to the start */
   flex-shrink: 0;
-  width: 200%;
 }
 
 .certimgs {
-  width: auto;
-  height: 80px;
-  /* background-color: aqua; */
-  margin: 20px;
+  width: 200px;
+  height: auto;
+  margin-right: 100px;
+  /* Same as imageMargin in JS */
   flex-shrink: 0;
+}
+
+.certimgs:last-child {
+  margin-right: 0;
+  /* Remove margin from the last image */
+}
+
+@media (max-width: 768px) {
+  .certimgs {
+    width: 150px;
+    /* Adjust for smaller screens */
+    margin-right: 100px;
+    /* Adjust spacing if needed */
+  }
 }
 
 .contact-form-title {
