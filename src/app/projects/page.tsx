@@ -1,21 +1,25 @@
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IoMdSearch } from "react-icons/io";
-import { HiOutlineBookmark } from "react-icons/hi";
-import { HiBookmark } from "react-icons/hi2";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import Head from 'next/head';
 import Link from 'next/link';
+
+import imggen from "@/app/assets/image-gen-thumbnail.png"
 
 export default function Projects() {
     const [isBookmarked, setIsBookmarked] = useState(false);
     const [isHeart, setIsHeart] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");  // State for search term
 
-    const toggleBookmark = () => {
-        setIsBookmarked(!isBookmarked);
+// Apply overflow: hidden to the body when the component is mounted
+    useEffect(() => {
+    document.body.classList.add("no-scroll"); // Add the no-scroll class to the body
+    return () => {
+        document.body.classList.remove("no-scroll"); // Remove it on unmount
     };
+}, []);
 
     const toggleHeart = () => {
         setIsHeart(!isHeart);
@@ -25,7 +29,7 @@ export default function Projects() {
     const projects = [
         { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/portfolio-webapp-project-pic.png", alt: "Portfolio Web-App Thumbnail"},
         { name: "Conditional Access", link: "/projects/conditional-access", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/phishing-conditional-access-project-pic.png", alt: "Conditional Access Thumbnail"},
-        // { name: "Employee Onboarding", link: "/projects/conditional-access", imgSrc: "", alt: " Employee Onboarding Thumbnail"}
+        { name: "Image Generator", link: "/projects/image-generator", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/image-gen-project-pic.png", alt: " Image Generator Thumbnail"}
     ];
     // const favprojects = [
     //     { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "/portfolio-webapp-project-pic.png" },
@@ -45,6 +49,7 @@ export default function Projects() {
                 <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/portfolio-webapp-project-pic.png" />
                 <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/phishing-conditional-access-project-pic.png" />
             </Head>
+            {/* <div className="project-bg-header"></div>  */}
             <span className="project-page-img">
                 <img src="https://shaqportfoliostorage.blob.core.windows.net/images/projectspageimg.png" alt="Projects Page img" />
             </span>
@@ -64,8 +69,7 @@ export default function Projects() {
                     </form>
                     <div className="filter-bar-ctn">
                         <div className="filter-bar">
-                            <span className="heart-icon" onClick={toggleHeart}>{isHeart ? <FaHeart /> : <FaRegHeart />}</span>
-                            <span className="bookmrk-icon" onClick={toggleBookmark}>{isBookmarked ? <HiBookmark /> : <HiOutlineBookmark />}</span>
+                            <span className="heart-icon" onClick={toggleHeart}>{isHeart ? <span className='heart-icon-filled'><FaHeart /></span> : <FaRegHeart />}</span>
                         </div>
                     </div>
                 </div>
@@ -83,12 +87,9 @@ export default function Projects() {
                         <div className="not-found">No Projects Found.</div>
                     )}
                 </div>
-                <div className="project-bg-header"></div>
-                <div className="project-bg-footer"></div>
-                <footer className="ai-footer">
-                    <span className="ai-copyright">© Shaquon Hamilton 2024.</span>
-                </footer>
+                {/* <div className="project-bg-header"></div> */}
             </div>
+            {/* <div className="projects-copyright">© Shaquon Hamilton 2024.</div> */}
         </div>
     );
 }

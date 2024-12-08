@@ -242,7 +242,7 @@ const handleSubmit = (e: React.FormEvent) => {
               height={200}
               style={{ marginRight: `${imageMargin}px` }}
               priority
-              onLoadingComplete={() => {
+              onLoad={() => {
                 setImagesLoaded((prev) => prev + 1);
               }}
             />
@@ -266,7 +266,7 @@ const handleSubmit = (e: React.FormEvent) => {
       </div>
         <footer className="footer-h-pg">
           <div className="footersocials">
-            <span className="linkedIn"><a href="https://www.linkedin.com/in/shaquonhamilton/"><FaLinkedin /></a></span>
+            {/* <span className="linkedIn"><a href="https://www.linkedin.com/in/shaquonhamilton/"><FaLinkedin /></a></span> */}
             <span className="Xtwitter"><a href="https://x.com/twizshaq"><FaXTwitter /></a></span>
             <span className="resume-download"><a href="https://shaqportfoliostorage.blob.core.windows.net/resume/ShaquonHamiltonResume.pdf" target="_blank"><CgFileDocument /></a></span>
           </div>

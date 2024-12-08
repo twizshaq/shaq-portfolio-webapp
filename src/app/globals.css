@@ -4,7 +4,7 @@
 
 :root {
   --mainbg-color: #101013;
-  --main-accent-color: #ffa977;
+  --main-accent-color: #ea8145;
   --inner-bg-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -23,7 +23,13 @@ body {
   flex-direction: column;
   /* height: 100dvh; */
   position: relative;
-  overflow-y: auto;
+}
+
+body.no-scroll {
+  overflow: clip;
+  /* Prevents scrolling but allows pull-to-refresh gestures */
+  overscroll-behavior: none;
+  /* Prevents scroll chaining */
 }
 
 /* body::before {
@@ -40,12 +46,6 @@ body {
   z-index: -1;
   filter: contrast(140%) brightness(100%);
 } */
-
-.projectMain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 /* .projectMain::before {
   content: "";
@@ -150,8 +150,12 @@ body {
 }
 }
 
-.heart-icon:hover, .bookmrk-icon:hover {
+.heart-icon:hover {
   cursor: pointer;
+}
+
+.heart-icon-filled {
+  color: rgb(255, 37, 124);
 }
 
 .project-bg-header {
@@ -174,30 +178,38 @@ body {
 }
 
 .projects-comp-ctn {
-  position: relative;
+  /* position: fixed; */
+  margin-top: 240px;
+  height: calc(100vh - 240px);
+  overflow-y: auto;
   /* height: 100dvh; */
   /* background-color: red; */
-  padding-bottom: 60px;
+  padding-bottom: 20px;
   /* min-height: 800px; */
   display: flex;
   align-items: center;
+  /* justify-content: flex-start;  */
+  /* align-content: flex-start; */
   flex-direction: column;
   text-align: center;
   /* justify-content: center; */
 }
 
 .projects {
-  position: relative;
+  /* position: absolute; */
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
-  /* background-color: red; */
+  /* background-color: green; */
+  /* padding-bottom: 60px; */
   justify-content: center;
+  /* align-items: flex-start; */
   /* height: 100vh; */
   /* min-height: 300px; */
-  margin-top: 240px;
-  max-width: 1200px;
-  width: 90vw;
+  /* margin-top: 240px; */
+  max-width: 1300px;
+  width: 100vw;
+  padding: 0px 20px;
   /* overflow-y: auto; */
   z-index: 0;
 }
@@ -206,16 +218,13 @@ body {
 .projects {
   top: -5px;
   gap: 30px;
-  margin-top: 200px;
+  /* margin-top: 200px; */
   }
-/* .project-img {
-  height: 195px;
-} */
-/* .phishing-simulator .project-img {
-  top: 0px;
-} */
+.projects-comp-ctn {
+  margin-top: 190px;
+  height: calc(100dvh - 190px);
+  }
 }
-
 .phishing-simulator {
   /* display: flex;
   flex-direction: column;
@@ -248,7 +257,7 @@ body {
   border-radius: 40px;
   border-color: white;
   border-width: 3px;
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 .project-name-ctn {
@@ -258,7 +267,8 @@ body {
   text-align: start;
   font-weight: 700;
   font-size: 27px;
-  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0px 0px 2px rgba(255, 255, 255, 0.8));
   line-height: 30px;
 }
 
@@ -297,29 +307,25 @@ body {
   top: -50px;
 }
 
-.projects-footer {
-color: white;
-  font-size: 0.8rem;
-  display: flex;
+.projects-copyright {
+  position: absolute;
+  /* left: 0px; */
+  bottom: 0px;
+  font-size: .8rem;
+  /* color: white;
   align-items: center;
-  flex-direction: column;
   text-align: center;
-  padding: 20px 0;
-  /* Adjust for better spacing */
-  /* position: relative; */
-  /* Footer will now flow naturally after the projects section */
-  /* margin-top: 40px; */
-  /* Add margin to ensure there's space between projects and footer */
-  z-index: 1;
+  position: absolute; */
+  /* padding-bottom: 10px; */
 }
 
-.projects-copyright {
-  color: white;
-  font-size: .8rem;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  /* padding-bottom: 10px; */
+.projectMain {
+  display: flex;
+  /* background-color: red; */
+  justify-content: center;
+  /* height: 100vh; */
+  /* overflow-y: hidden; */
+  /* align-items: center; */
 }
 
 .writeup-footer {
@@ -1254,10 +1260,11 @@ color: white;
   }
 
   .certimgs {
-    width: 45%;
-    height: 90px;
+    width: 47%;
+    height: auto;
     margin: 20px;
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
+    /* min-width: 200px; */
   }
 }
 
@@ -1329,7 +1336,7 @@ color: white;
 .about {
   /* position: relative; */
   font-weight: 500;
-  font-size: 1rem;
+  font-size: .96rem;
   /* padding: 0px 20px; */
   /* background-color: blue; */
   /* margin: 0px 200px; */
@@ -1356,7 +1363,7 @@ color: white;
 }
 
 .name {
-  font-size: 6rem;
+  font-size: 4.8rem;
   font-weight: 700;
   display: flex;
   justify-self: center;
@@ -1501,11 +1508,12 @@ color: white;
 .xp-title {
   font-size: 25px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .certs-title {
   font-size: 25px;
+  margin-bottom: 30px;
   font-weight: 700;
 }
 
@@ -1531,7 +1539,8 @@ color: white;
 .protexxa_logo {
   height: auto;
   /* background-color: white;  */
-  width: 120px;
+  width: 110px;
+  margin-bottom: 5px;
 }
 
 .protexxa-text-ctn {
@@ -1542,7 +1551,7 @@ color: white;
 }
 
 .protexxa-text {
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   margin-top: -20px;
   font-weight: 800;
 }
@@ -1551,12 +1560,12 @@ color: white;
   margin-top: -7px;
   /* margin-bottom: 0px; */
   /* padding: 0px 0px; */
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
 .protexxa-date {
-  font-size: 1rem;
+  font-size: .85rem;
   /* margin-top: -5px; */
   padding: 0 5px;
   /* padding-bottom: 5px; */
@@ -1649,7 +1658,7 @@ color: white;
 .certimgs {
   width: 200px;
   height: auto;
-  margin-right: 100px;
+  margin-right: 40px;
   /* Same as imageMargin in JS */
   flex-shrink: 0;
 }
