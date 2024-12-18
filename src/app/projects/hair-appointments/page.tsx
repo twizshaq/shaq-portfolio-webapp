@@ -23,11 +23,11 @@ export default function Hairbookings() {
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• React & Next.js:</span> For building a dynamic, server-rendered front-end interface. React’s component-based architecture simplified the creation of interactive UI elements, while Next.js provided efficient performance and SEO benefits.</p>
                 <br />
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• TailwindCSS:</span>To create a clean, responsive, and easily maintainable design. TailwindCSS accelerated the UI development process by providing a utility-first CSS framework.</p>
+                <br />
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• JavaScript:</span> Powering the interactive elements and client-side logic. JavaScript was crucial for handling form submissions, input validation, and asynchronous requests to the backend and external APIs.</p>
                 <br /><br />
                 <p className="secondaryheaders">Challenges</p>
-                <p>The main challenge was achieving a smooth integration with the Google Calendar API:</p>
-                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• </span>Cloud Resource Constraints: Without GPU access during GCP’s free trial, I had to optimize Stable Diffusion for CPU execution. This required extensive testing and configuration to ensure image generation worked effectively, even at reduced performance levels.</p>
+                <p>One of the main challenges I faced during this project was understanding and correctly implementing the Google Calendar API.</p>
                 <br /><br />
                 <p className="secondaryheaders">Key Features</p>
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• Simple Booking Interface:</span> Once an appointment is booked, it’s automatically added to Google Calendar, saving time and ensuring my friend has an up-to-date schedule.</p>
