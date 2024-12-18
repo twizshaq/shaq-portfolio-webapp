@@ -623,7 +623,7 @@ body.no-scroll {
 }
 
 .aimain {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -691,19 +691,47 @@ body.no-scroll {
 }
 
 
+.ai-bg-header {
+  height: 135px;
+  width: 100%;
+  background-color: var(--mainbg-color);
+  /* background-color: red; */
+  position: fixed;
+  top: 0px;
+}
+
+.ai-bg-footer {
+  height: 75px;
+  width: 100%;
+  background-color: var(--mainbg-color);
+  position: fixed;
+  bottom: 0px;
+  /* display: flex; */
+}
+
 .ai-comp-ctn {
   display: flex;
   /* position: relative; */
   /* top: -90px; */
   flex-direction: column;
-  /* background-color: red; */
+  /* background-color: rgb(112, 0, 0); */
   max-width: 750px;
   width: 90vw;
   /* height: 100%; */
   /* max-height: 100vh; */
-  margin-top: 140px;
+  margin-top: 135px;
+  /* height: calc(100vh - 135px); */
+  /* overflow-y: auto; */
   padding-bottom: 150px;
   /* z-index: 2 */
+}
+
+@media (max-width: 575px) {
+.ai-comp-ctn {
+    margin-top: 75px;
+    padding-bottom: 120px;
+    /* background-color: rgb(112, 0, 0); */
+  }
 }
 
 .ai-opts-ctn {
@@ -890,14 +918,6 @@ body.no-scroll {
 .ai-desc {
   font-size: .83rem;
   }
-.ai-comp-ctn {
-    margin-top: 70px;
-    /* height: 0vh; */
-    /* display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-between; */
-  }
 .aioutput {
     padding-bottom: 10px;
   }
@@ -908,24 +928,6 @@ body.no-scroll {
   top: 70px;
   left: 15px;
 }
-}
-
-.ai-bg-header {
-  height: 135px;
-  width: 100%;
-  background-color: var(--mainbg-color);
-  /* background-color: red; */
-  position: fixed;
-  top: 0px;
-}
-
-.ai-bg-footer{
-  height: 75px;
-  width: 100%;
-  background-color: var(--mainbg-color);
-  position: fixed;
-  bottom: 0px;
-  /* display: flex; */
 }
 
 .aioutput {
@@ -985,7 +987,7 @@ body.no-scroll {
 
 .inputchat {
   border-color: white;
-  border-radius: 20px;
+  border-radius: 30px;
   border-width: 1.5px;
   background-color: var(--inner-bg-color);
   color: white;
@@ -1261,10 +1263,14 @@ body.no-scroll {
 
   .certimgs {
     width: 47%;
-    height: auto;
-    margin: 20px;
-    /* flex-shrink: 0; */
-    /* min-width: 200px; */
+    /* height: -20px; */
+    margin: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .certimgs {
+    width: 150px;
   }
 }
 
@@ -1668,15 +1674,6 @@ body.no-scroll {
   /* Remove margin from the last image */
 }
 
-@media (max-width: 768px) {
-  .certimgs {
-    width: 150px;
-    /* Adjust for smaller screens */
-    margin-right: 100px;
-    /* Adjust spacing if needed */
-  }
-}
-
 .contact-form-title {
   font-size: 25px;
   font-weight: 700;
@@ -1710,7 +1707,7 @@ body.no-scroll {
   z-index: 0;
   outline: none;
   border-color: white;
-  border-radius: 20px;
+  border-radius: 30px;
   border-width: 1.5px;
   background-color: var(--inner-bg-color);
 }

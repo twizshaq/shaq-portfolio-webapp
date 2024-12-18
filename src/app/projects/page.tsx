@@ -29,7 +29,8 @@ export default function Projects() {
     const projects = [
         { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/portfolio-webapp-project-pic.png", alt: "Portfolio Web-App Thumbnail"},
         { name: "Conditional Access", link: "/projects/conditional-access", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/phishing-conditional-access-project-pic.png", alt: "Conditional Access Thumbnail"},
-        { name: "Image Generator", link: "/projects/image-generator", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/image-gen-project-pic.png", alt: " Image Generator Thumbnail"}
+        { name: "Appointment Scheduler", link: "/projects/hair-appointments", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/bzara-beauty-thumbail.jpg", alt: " Image Generator Thumbnail"},
+        { name: "Image Generator", link: "/projects/image-generator", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/image-gen-thumbnail.jpg", alt: " Image Generator Thumbnail"}
     ];
     // const favprojects = [
     //     { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "/portfolio-webapp-project-pic.png" },

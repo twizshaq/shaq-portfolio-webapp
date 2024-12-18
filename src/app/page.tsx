@@ -130,7 +130,7 @@ const handleSubmit = (e: React.FormEvent) => {
 
   useEffect(() => {
     if (originalContentWidth > 0) {
-      const duration = (originalContentWidth / 100) * 0.5; // Adjust speed as needed
+      const duration = (originalContentWidth / 100) * 0.9; // Adjust speed as needed
       controls.start({
         x: [0, -originalContentWidth],
         transition: {
@@ -145,22 +145,9 @@ const handleSubmit = (e: React.FormEvent) => {
 
   return (
     <div className="homeMain">
-      {/* <Head>
-        <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/homepagemainimg.png" />
-        <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/memoji_icon 2.png" />
-        <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/protexxa_logo.png" />
-        <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/az104.png" />
-        <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/SecurityPlus.png" />
-        <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/az900.png" />
-      </Head> */}
         <span className="home-page-img">
           <img src= "https://shaqportfoliostorage.blob.core.windows.net/images/homepagemainimg.png" alt="Home Page img" />
         </span>
-          {/* <motion.div
-      initial={{ opacity: 0, y: 40}}
-      animate={{ opacity: 1, y: 0}}
-      transition={{ duration: 1 }}
-    > */}
       <div className="abt-me-ctn">
       <div className="about-me">
         <p className="name">Hey, I'm <span>Shaquon</span></p>
@@ -187,45 +174,6 @@ const handleSubmit = (e: React.FormEvent) => {
         </div>
         </button>
       </div>
-        {/* <div className="protexxa-details">
-          <AnimatePresence>
-        {showDetails && (
-          <motion.div
-            className="protexxa-details"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.2}}
-            ref={detailsRef} 
-          >
-          <div className="ptx-content">
-          <p className="ptx-job-title">Security Analyst</p>
-          <div>
-            <p className="ptx-task1">Alert Monitoring and Triage:</p>
-            <ul className="ptx-ul">
-            <p className="ptx-subtask1">• Monitored and triaged security alerts using Atlassian OpsGenie, with logs ingested from Splunk.</p>
-            <p className="ptx-subtask1">• Investigated alerts that deviated from the norm by utilizing Splunk for deeper insights.</p>
-            <p className="ptx-subtask1">• Collaborated with relevant teams by promptly emailing the responsible parties for Confirmation.</p>
-            </ul>
-          </div>
-          <div>
-          <p className="ptx-task2">Reporting and Analysis:</p>
-          <ul className="ptx-ul">
-          <p className="ptx-subtask2">• Generated detailed weekly reports covering key metrics such as average triage time (maintained under 30 minutes), total alerts, false positives, and alert types.</p>
-          </ul>
-          </div>
-          <div>
-            <p className="ptx-task3">Collaboration with DevSecOps:</p>
-            <ul className="ptx-ul">
-            <p className="ptx-subtask3">• Worked with the DevSecOps team to refine alerting mechanisms, focusing on reducing the number of false positives.</p>
-            </ul>
-          </div>
-          </div>
-          <button className="ptx-close-btn" onClick={() => setShowDetails(false)}><p>Close</p></button>
-          </motion.div>
-          )}
-      </AnimatePresence>
-        </div> */}
       </div>
 
           <div className="certifications" ref={certContainerRef}>
@@ -238,8 +186,8 @@ const handleSubmit = (e: React.FormEvent) => {
               src={logo.src}
               alt="cert logos"
               className="certimgs"
-              width={200}
-              height={200}
+              width={400}
+              height={0}
               style={{ marginRight: `${imageMargin}px` }}
               priority
               onLoad={() => {

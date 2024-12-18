@@ -25,6 +25,9 @@ export default function Imagegen() {
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• Python:</span> For scripting and managing the AI pipeline, including installation, configuration, and generating images programmatically.</p>
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• Hugging Face:</span> Utilized to manage and download Stable Diffusion model weights, ensuring seamless integration into the deployment pipeline.</p>
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• SSH and SCP:</span> Secure Shell (SSH) and Secure Copy (SCP) were used to manage remote access and transfer generated images from the cloud VM to a local environment.</p>
+                <br />
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <blockquote className="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">took around 4 mins to generate <br/>but at least i got it to work <a href="https://t.co/wOczBJDexM">pic.twitter.com/wOczBJDexM</a></p>&mdash; shaq (@twizshaq) <a href="https://twitter.com/twizshaq/status/1864771640778793202?ref_src=twsrc%5Etfw">December 5, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script></div>
                 <br /><br />
                 <p className="secondaryheaders">Challenges</p>
                 <p>This project presented several challenges, each offering valuable learning opportunities:</p>
@@ -34,7 +37,7 @@ export default function Imagegen() {
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• </span>Model Management: Managing and downloading large pre-trained models like Stable Diffusion required understanding Hugging Face's APIs and properly configuring local directories to handle the model files.</p>
                 <br />
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• </span>SSH and SCP Troubleshooting: Configuring SSH keys and resolving public key authentication errors posed another challenge, especially during image transfers between the VM and the local machine. These issues deepened my understanding of secure cloud access and key management.</p>
-                <br /><br /> 
+                <br /><br />
                 <p className="secondaryheaders">Lessons Learned</p>
                 <p>This project underscored the importance of adaptability and problem-solving in the face of technical constraints. From optimizing Stable Diffusion for CPU usage to overcoming SSH challenges, each hurdle enriched my understanding of cloud deployment and AI integration.</p>
                 <br /><br />
