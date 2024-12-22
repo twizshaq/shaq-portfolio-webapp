@@ -5,6 +5,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import Head from 'next/head';
 import Link from 'next/link';
+import SVGShapes from "@/app/components/SVGShapes";
 
 import imggen from "@/app/assets/image-gen-thumbnail.png"
 
@@ -91,6 +92,7 @@ export default function Projects() {
                 {/* <div className="project-bg-header"></div> */}
             </div>
             {/* <div className="projects-copyright">© Shaquon Hamilton 2024.</div> */}
+            {/* <SVGShapes /> */}
         </div>
     );
 }

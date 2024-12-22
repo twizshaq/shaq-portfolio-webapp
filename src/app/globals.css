@@ -4,6 +4,7 @@
 
 :root {
   --mainbg-color: #101013;
+  /* --mainbg-color: #636389; */
   --main-accent-color: #ea8145;
   --inner-bg-color: rgba(0, 0, 0, 0.3);
 }
@@ -13,6 +14,29 @@
   margin: 0;
   padding: 0;
 } */
+
+.svg-container {
+  /* background-color: red; */
+  position: absolute;
+  z-index: 5;
+}
+
+.svg-container {
+  animation: draw-x 1s ease-in-out forwards;
+  /* Apply the animation */
+}
+
+@keyframes draw-x {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 body {
   background-color: var(--mainbg-color);
@@ -513,8 +537,8 @@ body.no-scroll {
 }
 
 .navigator {
-  border-radius: 30px;
-  border-width: 1px;
+  border-radius: 50px;
+  border-width: 2px;
   border-color: white;
   height: 47px;
   align-items: center;
@@ -525,24 +549,26 @@ body.no-scroll {
   background: var(--inner-bg-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  padding: 8px 0px;
+  padding: 8px 6px;
   margin: 0 auto;
   z-index: 2;
+  overflow: hidden;
 }
 
 .active-navbar {
-  border-radius: 15px;
+  border-radius: 50px;
   display: flex;
   align-items: center;
-  color: var(--main-accent-color) !important;
-  text-shadow: .2px .2px 2px var(--inner-bg-color);
+  color: var(--main-accent-color);
+  padding: 20px 10px;
+  background-color: var(--main-accent-color);
 }
 
 .navtext {
   font-weight: 800;
   font-size: larger;
   color: white;
-  padding: 3px 20px;
+  padding: 5px 20px;
   letter-spacing: 2px;
   line-height: 1.2;
   display: flex;
