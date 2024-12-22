@@ -6,7 +6,7 @@ import { motion, AnimatePresence, useAnimation} from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import emailjs from '@emailjs/browser';
 import { Typewriter } from '@/app/components/job-title';
-import { AnimatedSection } from '@/app/components/animated-section';
+// import { AnimatedSection } from '@/app/components/animated-section';
 import Image from 'next/image';
 import { FaXTwitter } from "react-icons/fa6";
 import Head from 'next/head';
