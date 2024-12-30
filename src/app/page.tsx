@@ -153,13 +153,18 @@ const handleSubmit = (e: React.FormEvent) => {
         <p className="name">Hey, I'm <span>Shaquon</span></p>
         <p className="jobtitle">I'm a <span><Typewriter titles={titles} speed={150} pause={2000}/></span></p>
         <p className="about">
-          I have one year of hands-on experience as a Security Analyst, working with tools like Splunk, AWS GuardDuty, and Azure. Driven by a passion for technology and innovation, I’m eager to expand my expertise into AI, Machine Learning, Cloud Engineering, Cloud Security and Software/Web Development, with the help of AI to build interesting projects. As a quick learner, I’m committed to continuously building my skill set and applying my knowledge to real-world projects. This simple portfolio is to reflect my journey, showcasing the projects I’ve worked on, the skills I’ve acquired, and the progress I’m making as I establish a reputable presence.
+          One year of experience as a Security Analyst, specializing in tools like Splunk, AWS GuardDuty, and Azure. Passionate about technology and innovation, I’m expanding my skills in AI, Machine Learning, Cloud Security, and Software/Web Development through hands-on projects. This portfolio highlights my journey, showcasing my projects, skills, and growth as I build a strong professional presence.
         </p>
         </div>
         <div className="testbox">
           <Image src= "https://shaqportfoliostorage.blob.core.windows.net/images/memoji2.png" alt="memoji icon" width={800} height={400} priority quality={100}/>
         </div>
+        {/* <div className="avlbty"><div className="avlbty-indicator"></div><p>Available for new projects</p></div> */}
       </div>
+      {/* <div className="skills-ctn">
+        <p className="skills-title">Skills</p>
+        <div className="skills-box"></div>
+      </div> */}
     <div className="experience">
         <h1 className="xp-title">Work Experience</h1>
         <div className="xp-ctns">
