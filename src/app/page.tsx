@@ -379,9 +379,9 @@ const handleSubmit = (e: React.FormEvent) => {
               alt="Typescript Logo"
               width={50}
               height={50}/>
-              <Image
-              src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/jira-logo.svg"
-              alt="Jire Logo"
+            <Image
+              src="https://insta-recipe-assets.s3.us-east-1.amazonaws.com/cloudflare-logo.svg"
+              alt="Cloudflare Logo"
               width={50}
               height={50}/>
             <Image
@@ -390,6 +390,11 @@ const handleSubmit = (e: React.FormEvent) => {
               alt="Splunk Logo"
               width={80}
               height={80}/>
+            <Image
+              src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/jira-logo.svg"
+              alt="Jire Logo"
+              width={50}
+              height={50}/>
         </div>
     </div>
     </div>
@@ -399,16 +404,19 @@ const handleSubmit = (e: React.FormEvent) => {
       <div className="max-w-fit w-[90vw] mx-auto mb-0 p-5 text-center flex flex-col items-center relative">
         <h1 className="font-bold text-[1.7rem] mb-[30px]">Contact</h1>
         <form ref={contactFormRef} className="flex flex-col max-w-fit items-center gap-[40px] bg" onSubmit={handleSubmit}>
-          <div className="absolute -mt-[4.7px] mr-[30px] self-end bg-[--mainbg-color] h-[7px] w-[54px]"></div>
-          <p className="self-end absolute -mt-[12px] font-bold mr-[30px] px-[5px] tracking-[.5px]"><span className={nameFocused ? "fontshine1" : "text-white"}>Name</span></p>
+          {/* <div className="absolute -mt-[4.7px] mr-[30px] self-end bg-[--mainbg-color] h-[7px] w-[54px]"></div> */}
+          <p className="self-end absolute -mt-[12px] font-bold mr-[30px] px-[5px] tracking-[.5px] z-[1]"><span className={nameFocused ? "fontshine1" : "text-white"}>Name</span></p>
+          <p className="self-end absolute -mt-[21.5px] font-bold mr-[30px] px-[5px] tracking-[.5px] bg-[--mainbg-color]"><span className="text-[--mainbg-color]">Name</span></p>
           <input ref={contactNameRef} className="flex items-center my-[13] max-w-[90vw] w-[500px] p-[13px_20px] pointer-events-auto outline-none rounded-[30px] border-[2.5px] border-[--outline-color] bg-[--inner-bg-color] font-semibold" type="text" placeholder="Your Name" onFocus={() => setNameFocused(true)} onBlur={() => setNameFocused(false)} required/>
 
-          <div className="absolute mt-[90.5px] mr-[30.5px] self-end bg-[--mainbg-color] h-[7px] w-[50px]"></div>
-          <p className="self-end absolute mt-[83px] font-bold mr-[30px] px-[5px] tracking-[.5px]"><span className={emailFocused ? "fontshine1" : "text-white"}>Email</span></p>
+          {/* <div className="absolute mt-[90.5px] mr-[30.5px] self-end bg-[--mainbg-color] h-[7px] w-[50px]"></div> */}
+          <p className="self-end absolute mt-[83px] font-bold mr-[30px] px-[5px] tracking-[.5px] z-[1]"><span className={emailFocused ? "fontshine1" : "text-white"}>Email</span></p>
+          <p className="self-end absolute mt-[73.5px] font-bold mr-[30px] px-[5px] tracking-[.5px] bg-[--mainbg-color]"><span className="text-[--mainbg-color]">Email</span></p>
           <input ref={contactEmailRef} className="flex items-center my-[13] max-w-[90vw] w-[500px] p-[13px_20px] pointer-events-auto outline-none rounded-[30px] border-[2.5px] border-[--outline-color] bg-[--inner-bg-color] font-semibold" type="email" placeholder="Example@gmail.com" onFocus={() => setEmailFocused(true)} onBlur={() => setEmailFocused(false)} required/>
 
-          <div className="absolute mt-[185.4px] mr-[30px] self-end bg-[--mainbg-color] h-[7px] w-[78.5px]"></div>
-          <p className="self-end absolute mt-[177px] font-bold mr-[30px] px-[5px] tracking-[.5px]"><span className={messageFocused ? "fontshine1" : "text-white"}>Message</span></p>
+
+          <p className="self-end absolute mt-[177px] font-bold mr-[30px] px-[5px] tracking-[.5px] z-[1]"><span className={messageFocused ? "fontshine1" : "text-white"}>Message</span></p>
+          <p className="self-end absolute mt-[168.2px] font-bold mr-[30px] px-[5px] tracking-[.5px] bg-[--mainbg-color]"><span className="text-[--mainbg-color]">Message</span></p>
           <textarea ref={contactMessageRef} className="flex items-center my-[13] max-w-[90vw] w-[500px] h-[150px] p-[13px_20px] pointer-events-auto outline-none rounded-[30px] border-[2.5px] border-[--outline-color] font-semibold resize-none bg-[--inner-bg-color]" placeholder="Your Message..." onFocus={() => setMessageFocused(true)} onBlur={() => setMessageFocused(false)} required/>
 
           <button ref={contactBtnRef} type="submit" className="bg-inner-bg-color px-[40px] py-[7px] text-[18px] border-[2.5px] border-[--outline-color] rounded-full self-center font-semibold m-3 transition-transform duration-1000 bg-[--inner-bg-color]">Submit</button>

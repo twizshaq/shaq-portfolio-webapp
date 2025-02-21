@@ -5,6 +5,27 @@ import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image'
 
 export default function Instarecipe() {
+
+    const tweetRef = useRef<HTMLDivElement | null>(null); // Create a ref to target the blockquote
+
+    useEffect(() => {
+        // Load the Twitter script only on the client-side, after component mount
+        const script = document.createElement('script');
+        script.src = 'https://platform.twitter.com/widgets.js';
+        script.async = true;
+
+        if (tweetRef.current) { // Append the script to the div containing the blockquote
+            tweetRef.current.appendChild(script);
+        }
+
+        return () => {
+            // Cleanup: Remove the script when the component unmounts (optional but good practice)
+            if (tweetRef.current && tweetRef.current.contains(script)) {
+                tweetRef.current.removeChild(script);
+            }
+        };
+    }, []);
+
     return (
         <div className="main-imagegen-writeup">
             <Link href="/projects">
@@ -13,30 +34,32 @@ export default function Instarecipe() {
                 <p className="mainheaders">Insta Recipe: AI-based Food Image Recognition with Recipe Discovery</p>
                 <br /><br />
                 <p className="secondaryheaders">Overview & Purpose</p>
-                <p>Insta Recipe is a Next.js web application that identifies a dish from an uploaded image and provides users with its key ingredients, a suggested recipe, additional images, and even related links to Pinterest and YouTube. The main motivation behind this project was a spark of inspiration—I thought it would be both fascinating and practical for anyone curious about recreating a dish they come across.</p>
+                <p>Insta Recipe is a Next.js web application that identifies a dish from an uploaded image and provides users with its key ingredients, a suggested recipe, additional images, and even related links to Pinterest and YouTube. The main motivation behind this project was a spark of inspiration I thought it would be both fascinating and practical for anyone curious about recreating a dish they come across.</p>
                 <br /><br />
                 <p className="secondaryheaders">What Was Used</p>
                 <p>To build this project, I utilized a modern tech stack and a couple of cloud services:</p>
-                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• Google Gemini API:</span> Used for deploying a virtual machine (VM) to handle the compute-heavy requirements of Stable Diffusion.</p>
-                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• Stable Diffusion:</span> An advanced text-to-image generation open source model capable of creating visually stunning artwork from simple textual prompts.</p>
-                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• Python:</span> For scripting and managing the AI pipeline, including installation, configuration, and generating images programmatically.</p>
-                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• Hugging Face:</span> Utilized to manage and download Stable Diffusion model weights, ensuring seamless integration into the deployment pipeline.</p>
-                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• SSH and SCP:</span> Secure Shell (SSH) and Secure Copy (SCP) were used to manage remote access and transfer generated images from the cloud VM to a local environment.</p>
                 <br />
-                <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
-                <blockquote className="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">took around 4 mins to generate <br/>but at least i got it to work <a href="https://t.co/wOczBJDexM">pic.twitter.com/wOczBJDexM</a></p>&mdash; shaq (@twizshaq) <a href="https://twitter.com/twizshaq/status/1864771640778793202?ref_src=twsrc%5Etfw">December 5, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script></div>
+                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>Google Gemini API</span><br />To analyze the uploaded food images and generate ingredient lists, recipes, and related dish information.</p>
+                <br />
+                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>Supabase</span><br />For user account creation and image handling. This setup allows users to sign up, upload images, and retrieve results securely.</p>
+                <br />
+                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>JavaScript</span><br />For handling client-side interactions and fine-tuning app logic.</p>
+                <br />
+                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>Search Queries</span><br />Dynamically constructed queries (using the recognized dish name) to generate relevant Pinterest and YouTube links.</p>
+                <br />
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}} ref={tweetRef}>
+                <blockquote className="twitter-tweet" data-media-max-width="560" data-chrome='noheader nofooter noborders transparent' ><p lang="en" dir="ltr">so i made this web app that analyzes food 😃 <a href="https://t.co/nhpDtnjUN8">pic.twitter.com/nhpDtnjUN8</a></p>&mdash; shaq (@twizshaq) <a href="https://twitter.com/twizshaq/status/1892621361916358794?ref_src=twsrc%5Etfw">February 20, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js"></script></div>
                 <br /><br />
                 <p className="secondaryheaders">Challenges</p>
                 <p>This project presented several challenges, each offering valuable learning opportunities:</p>
                 <br />
-                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• </span>Cloud Resource Constraints: Without GPU access during GCP’s free trial, I had to optimize Stable Diffusion for CPU execution. This required extensive testing and configuration to ensure image generation worked effectively, even at reduced performance levels.</p>
-                <br />
-                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• </span>Model Management: Managing and downloading large pre-trained models like Stable Diffusion required understanding Hugging Face's APIs and properly configuring local directories to handle the model files.</p>
-                <br />
-                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• </span>SSH and SCP Troubleshooting: Configuring SSH keys and resolving public key authentication errors posed another challenge, especially during image transfers between the VM and the local machine. These issues deepened my understanding of secure cloud access and key management.</p>
+                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>Supabase Integration</span><br />
+                The biggest hurdle I faced was integrating Supabase for user account creation and image storage. As this was my first time using Supabase, I encountered a learning curve in configuring authentication, database rules, and ensuring a smooth user experience.</p>
                 <br /><br />
-                <p className="secondaryheaders">Lessons Learned</p>
-                <p>This project underscored the importance of adaptability and problem-solving in the face of technical constraints. From optimizing Stable Diffusion for CPU usage to overcoming SSH challenges, each hurdle enriched my understanding of cloud deployment and AI integration.</p>
+                <p className="secondaryheaders">Key Features</p>
+                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>Food Recognition & Recipe Generation</span><br />Users can upload a food image, and within seconds, the Google Gemini API identifies the dish, suggests possible ingredients, and provides a recipe outline.</p>
+                <br />
+                <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>Additional Food Images & Quick Links</span><br />It also fetches related images of the recognized dish. Moreover, it generates dynamic links to Pinterest and YouTube, giving users instant access to more ideas, tutorials, and visual inspiration.</p>
                 <br /><br />
             </div>
                 <footer className="writeup-footer">

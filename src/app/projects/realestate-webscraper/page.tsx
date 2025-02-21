@@ -5,6 +5,27 @@ import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image'
 
 export default function Imagegen() {
+
+    const tweetRef = useRef<HTMLDivElement | null>(null); // Create a ref to target the blockquote
+
+    useEffect(() => {
+        // Load the Twitter script only on the client-side, after component mount
+        const script = document.createElement('script');
+        script.src = 'https://platform.twitter.com/widgets.js';
+        script.async = true;
+
+        if (tweetRef.current) { // Append the script to the div containing the blockquote
+            tweetRef.current.appendChild(script);
+        }
+
+        return () => {
+            // Cleanup: Remove the script when the component unmounts (optional but good practice)
+            if (tweetRef.current && tweetRef.current.contains(script)) {
+                tweetRef.current.removeChild(script);
+            }
+        };
+    }, []);
+
     return (
         <div className="main-imagegen-writeup">
             <Link href="/projects">
@@ -23,7 +44,7 @@ export default function Imagegen() {
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• Requests (Python):</span> A Python library used to make HTTP requests to the target website, fetching the HTML content that needed to be scraped.</p>
                 <p style={{ marginLeft: "25px" }}><span style={{ fontWeight: "700"}}>• Axios (JavaScript):</span> Used on the front-end to make asynchronous HTTP requests to the back-end API, sending the user's search parameters and receiving the filtered listings.</p>
                 <br />
-                <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}} ref={tweetRef}>
                 <blockquote className="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">made a real estate web scraper. currently only scrapes one site. but it works to a certain extent so that&#39;s another project to add to my portfolio <a href="https://t.co/UUTkgLUhEU">pic.twitter.com/UUTkgLUhEU</a></p>&mdash; shaq (@twizshaq) <a href="https://twitter.com/twizshaq/status/1873192791607787774?ref_src=twsrc%5Etfw">December 29, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script></div>
                 <br /><br />
                 <p className="secondaryheaders">Challenges</p>

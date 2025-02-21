@@ -7,12 +7,20 @@
   --ai-pdq-bgcolor: #17171b;
   --mainbg-color: #101013;
   /* --main-accent-color: #ea8145; */
-  --outline-color: #2b2b2e;
+  --outline-color: #38383e;
   --main-accent-color: #0a90ff;
   --main-accent-color-dark: #0968dc;
   --main-blob-color: #186db3;
 
-  --inner-bg-color: rgba(0, 0, 0, 0.5);
+  --inner-bg-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Target the blockquote directly (you already tried this, but just in case) */
+.twitter-tweet {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
 }
 
 .scrollbar-hidden {
@@ -429,21 +437,24 @@ body.no-scroll {
 
 .bck-btn {
   position: relative;
+  display: flex;
   top: 100px;
   border-color: white;
+  justify-content: center;
+  align-items: center;
   border-width: 1.5px;
-  border-radius: 20px;
-  width: 120px;
-  height: 40px;
-  text-align: center;
+  border-radius: 30px;
+  padding: 4px 20px;
+  gap: 7px;
+  width: fit-content;
+  height: fit-content;
   background: var(--inner-bg-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  transition: position 0.3s ease;
 }
 
 .bck-btn:hover{
-  background: rgba(255, 0, 43, 0.596);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .bck-btn.fixed {
@@ -453,7 +464,6 @@ body.no-scroll {
 }
 
 .bck-btn-text {
-  position: absolute;
   right: 13px;
   bottom: 1px;
   font-weight: 700;
@@ -461,13 +471,13 @@ body.no-scroll {
 }
 
 .bck-arrow {
-  position: absolute;
+
   font-size: 25px;
   left: 15px;
   bottom: 6px;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 860px) {
   .bck-btn{
     top: 20px;
   }

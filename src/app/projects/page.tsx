@@ -48,7 +48,7 @@ export default function Projects() {
     ];
 
     const newProjects: Project[] = [ // Type newProjects array
-        { name: "Insta Recipe", link: "/projects/insta-recipe", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/image-gen-thumbnail.jpg", alt: "Insta Recipe Thumbnail", isFavorite: true },
+        { name: "Insta Recipe", link: "/projects/insta-recipe", imgSrc: "https://insta-recipe-assets.s3.us-east-1.amazonaws.com/insta-recipe-thumbnail.jpg", alt: "Insta Recipe Thumbnail", isFavorite: true },
         { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/portfolio-webapp-project-pic.png", alt: "Portfolio Web-App Thumbnail", isFavorite: true },
     ];
 
@@ -214,7 +214,7 @@ export default function Projects() {
                             onClick={() => setIsPopupOpen(false)}
                         >
                             <div
-                            className="bg-black border-[3px] border-[#212125] bg-opacity-20 text-white rounded-[40px] p-6 relative w-11/12 max-w-md backdrop-blur-[30px]"
+                            className="bg-black border-[3px] border-[--outline-color] bg-opacity-20 text-white rounded-[40px] p-6 relative w-11/12 max-w-md backdrop-blur-[30px]"
                             onClick={(e) => e.stopPropagation()}
                             >
                             <h2 className="text-[1.5rem] font-bold mb-[10px]">Legacy Projects</h2>
