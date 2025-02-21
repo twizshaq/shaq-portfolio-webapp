@@ -2,16 +2,15 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { VscSparkleFilled } from "react-icons/vsc";
-import Zelyxai from "@/app/assets/Zelyxai.png";
-import Head from 'next/head';
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { BlobServiceClient } from "@azure/storage-blob";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
-import Link from 'next/link'
 import { motion } from "framer-motion";
-import SketchfabEmbed from '@/app/components/zelyx3d';
 
+interface Message {
+    role: "user" | "model";
+    parts: { text: string }[];
+}
 
 export default function Aichat() {
     const [showDetails, setShowDetails] = useState(false);
@@ -23,15 +22,14 @@ export default function Aichat() {
     const dropdownRef = useRef<HTMLDivElement | null>(null);
     // const voiceOptRef = useRef<HTMLAnchorElement | null>(null);
     const [messages, setMessages] = useState<Array<{ text: string, fullText?: string, isAI: boolean }>>([]);
-    const sketchfabModelUid = '45bcbeabab9949a3aaaea42a0255143f';
-    const [hasSentMessage, setHasSentMessage] = useState(false); // New state variable
+    const [hasSentMessage, setHasSentMessage] = useState(false);
 
     const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY as string;
     const genAI = new GoogleGenerativeAI(apiKey);
     const systemInstruction = process.env.NEXT_PUBLIC_GEMINI_SYSTEM_INSTRUCTIONS as string;
 
 const model = genAI.getGenerativeModel({
-    model: "gemini-1.5-flash-002",
+    model: "gemini-2.0-flash-exp",
     systemInstruction: systemInstruction,
 });
 
@@ -292,95 +290,6 @@ const handleClickOutside = (event: MouseEvent) => { // Explicitly define 'event'
             )}
             </div>
         )}
-        {/* <Head>
-            <link rel="preload" as="image" href="https://shaqportfoliostorage.blob.core.windows.net/images/zelyxai.png" />
-            </Head>
-            <button ref={dropdownRef} onClick={() => setShowDetails(!showDetails)} className='ai-selector-btn'><div className="ainameimg"><img src= "https://shaqportfoliostorage.blob.core.windows.net/images/zelyxai.png" alt="zelyx ai logo" /></div><span className='ai-drpdwn-icon'><MdKeyboardArrowDown /></span></button>
-
-            {showDetails && (
-            <div className='ai-opts-ctn'>
-                <div className='ai-opt-child-ctn'>
-                    <button className='zelyx-opt' style={{backgroundColor: "rgba(255, 255, 255, .3)"}}>
-                        <p className='ai-title'>zelyx</p><span className='chatbot-tick'><FaCheck /></span>
-                        <p className='ai-desc'>A chatbot to answer questions about me</p>
-                    </button>
-                    <button className='voice-opt'>
-                        <p className='ai-title'>?????</p>
-                        <p className='ai-desc'>Coming Soon!</p>
-                    </button> */}
-                    {/* <Link href='/voicechat' className='voice-opt' ref={voiceOptRef}>
-                        <p className='ai-title'>?????</p>
-                        <p className='ai-desc'>Coming Soon!</p>
-                    </Link> */}
-                {/* </div>
-            </div>
-            )}
-
-            {showWelcome && (
-                <motion.div
-                    className='zelyx-welcome-ctn'
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                >
-                    <div className='zelyx-welcome-text'>
-                        <span className='wtz'>{welcomeText}</span>
-                        <br />
-                    </div>
-                <motion.span
-                    className='wwyltkas'
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, ease: "easeOut" }}
-                >
-                    What would you like to know about Shaq?
-                </motion.span>
-                <motion.div
-                    className='pre-opts'
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.4, ease: "easeOut" }}
-                >
-                    <button className='wis' onClick={() => handlePredefinedQuestion("Who is Shaquon?")}>Who is Shaquon?</button>
-                    <button className='wedsh' onClick={() => handlePredefinedQuestion("What experiences does Shaq have?")}>What experiences does Shaq have?</button>
-                    </motion.div>
-                </motion.div>
-            )}
-            <div className="ai-comp-ctn"> */}
-                {/* <div className="aioutput"> */}
-                    {/* {messages.map((msg, index) => (
-                        <div key={index} className={msg.isAI ? "aiMessage" : "userMessage"}>
-                            <p>{msg.text}</p>
-                        </div> ))}
-                    {loading && (
-                        <div className="loading-indicator">
-                            <div className="loading-bar"></div>
-                            <div className="loading-bar"></div>
-                            <div className="loading-bar"></div>
-                        </div>
-                    )}
-                </div>
-                <form className="aiquestbox" onSubmit={(e) => e.preventDefault()}>
-                    <input
-                        className="inputchat"
-                        type="text"
-                        placeholder="Ask a question!"
-                        value={userMessage}
-                        onChange={(e) => setUserMessage(e.target.value)}
-                        onKeyPress={handleKeyPress}
-                    />
-                    <span className="send-button" onClick={handleOutgoingChat}><span className="VscSparkleFilled"><VscSparkleFilled /></span></span>
-                </form>
-
-                <footer className="ai-footer">
-                    <span className="ai-copyright">© Shaquon Hamilton 2024.</span>
-                </footer> */}
-            {/* </div> */}
-        {/* <footer className="ai-footer">
-            <span className="ai-copyright">© Shaquon Hamilton 2024.</span>
-        </footer> */}
-        {/* <div className="ai-bg-header"></div>
-        <div className="ai-bg-footer"></div> */}
         </div>
     );
 }

@@ -11,7 +11,7 @@
   "dependencies": {
     "@azure/storage-blob": "^12.24.0",
     "@emailjs/browser": "^4.4.1",
-    "@google/generative-ai": "^0.17.1",
+    "@google/generative-ai": "^0.22.0",
     "@tailwindcss/postcss": "^4.0.6",
     "@tsparticles/engine": "^3.8.1",
     "@tsparticles/react": "^3.0.0",
