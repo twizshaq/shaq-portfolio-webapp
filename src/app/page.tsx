@@ -1,7 +1,7 @@
 "use client";
 import { FaLinkedin } from "react-icons/fa";
 import { LuGithub } from "react-icons/lu";
-import { CgFileDocument } from "react-icons/cg";
+import { LuFileText } from "react-icons/lu";
 import { motion, AnimatePresence, useAnimation} from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import emailjs from '@emailjs/browser';
@@ -424,9 +424,9 @@ const handleSubmit = (e: React.FormEvent) => {
       </div>
         <footer className="footer-h-pg">
           <div className="flex relative text-[1.8rem] gap-[13px] -bottom-[50px]">
-            <span className="Xtwitter"><a href="https://github.com/twizshaq"><LuGithub /></a></span>
-            <span className="Xtwitter"><a href="https://x.com/twizshaq"><FaXTwitter /></a></span>
-            <span className="resume-download"><a href="https://shaqportfoliostorage.blob.core.windows.net/resume/ShaquonHamiltonResume.pdf" target="_blank"><CgFileDocument /></a></span>
+            <span className="Xtwitter"><a href="https://github.com/twizshaq" target="_blank" rel="noopener noreferrer"><LuGithub /></a></span>
+            <span className="Xtwitter"><a href="https://x.com/twizshaq" target="_blank" rel="noopener noreferrer"><FaXTwitter /></a></span>
+            <span className="resume-download"><a href="https://shaqportfoliostorage.blob.core.windows.net/resume/ShaquonHamiltonResume.pdf" target="_blank" rel="noopener noreferrer"><LuFileText /></a></span>
           </div>
           <span className="flex relative -bottom-[60px] font-semibold pb-[10px] text-[.7rem]">© Shaquon Hamilton 2024.</span>
         </footer>

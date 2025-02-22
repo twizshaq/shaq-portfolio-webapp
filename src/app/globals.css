@@ -5,9 +5,10 @@
 :root {
   /* --mainbg-color: #16161a; */
   --ai-pdq-bgcolor: #17171b;
-  --mainbg-color: #101013;
+    --mainbg-color: #101013;
   /* --main-accent-color: #ea8145; */
-  --outline-color: #38383e;
+  --outline-color: #66666b;
+  --outline-color-light: #66666b;
   --main-accent-color: #0a90ff;
   --main-accent-color-dark: #0968dc;
   --main-blob-color: #186db3;
@@ -170,8 +171,10 @@ body.no-scroll {
 
 .filter-bar {
   display: flex;
+  align-items: center;
   font-size: 1.8rem;
   gap: 10px;
+  /* background-color: blue; */
   /* position: relative; */
   /* right: -350px; */
   top: 5px;
@@ -251,15 +254,17 @@ body.no-scroll {
 }
 
 .heart-icon {
+  display: inline-block;
   font-size: 1.5rem;
+  color: var(--outline-color-light);
 }
 
 .heart-icon-filled {
   margin-top: 10px;
   display: inline-block;
-  color: rgb(255, 13, 45);
+  color: rgb(255, 13, 67);
   /* -webkit-filter: drop-shadow(0 0 6px rgba(255, 13, 45, 0.7)); */
-  filter: drop-shadow(0px 0px 6px rgba(255, 13, 45, .7));
+  filter: drop-shadow(0px 0px 6px rgba(255, 13, 67, .7));
 }
 
 .project-bg-header {
@@ -582,6 +587,7 @@ body.no-scroll {
   display: flex;
   align-items: center;
   color: var(--main-accent-color);
+  /* filter: drop-shadow(0px 0px 4px rgba(73, 99, 255, 0.8)); */
   padding: 20px 10px;
   /* background-color: var(--main-accent-color); */
 }
@@ -643,15 +649,15 @@ body.no-scroll {
 
 .resume-download {
   /* padding-left: 10px; */
-  transition: .25s ease-in-out;
+  transition: .4s ease-in-out;
 }
 
 .linkedIn {
-  transition: .25s ease-in-out;
+  transition: .5s ease-in-out;
 }
 
 .Xtwitter {
-  transition: .25s ease-in-out;
+  transition: .4s ease-in-out;
 }
 
 .resume-download:hover, .linkedIn:hover, .Xtwitter:hover {
