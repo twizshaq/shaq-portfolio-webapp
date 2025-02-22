@@ -1,6 +1,6 @@
 "use client";
 import { FaLinkedin } from "react-icons/fa";
-import { FaGithubSquare } from "react-icons/fa";
+import { LuGithub } from "react-icons/lu";
 import { CgFileDocument } from "react-icons/cg";
 import { motion, AnimatePresence, useAnimation} from "framer-motion";
 import { useRef, useEffect, useState } from "react";
@@ -423,7 +423,8 @@ const handleSubmit = (e: React.FormEvent) => {
         </form>
       </div>
         <footer className="footer-h-pg">
-          <div className="flex relative text-[1.8rem] gap-[10px] -bottom-[50px]">
+          <div className="flex relative text-[1.8rem] gap-[13px] -bottom-[50px]">
+            <span className="Xtwitter"><a href="https://github.com/twizshaq"><LuGithub /></a></span>
             <span className="Xtwitter"><a href="https://x.com/twizshaq"><FaXTwitter /></a></span>
             <span className="resume-download"><a href="https://shaqportfoliostorage.blob.core.windows.net/resume/ShaquonHamiltonResume.pdf" target="_blank"><CgFileDocument /></a></span>
           </div>
