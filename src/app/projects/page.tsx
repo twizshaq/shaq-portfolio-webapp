@@ -118,7 +118,7 @@ export default function Projects() {
                 </form>
                 <div className="filter-bar-ctn">
                     <div className="filter-bar">
-                        <span className="text-[1.6rem] text-[--outline-color-light] inline-block hover:text-[#cdcdd5] hover:drop-shadow-[0px_0px_4px_rgba(205,205,213,.5)] duration-[.5s]"><a href="https://github.com/twizshaq"><LuGithub /></a></span>
+                        <span className="text-[1.6rem] text-[--outline-color-light] inline-block hover:text-[#cdcdd5] hover:drop-shadow-[0px_0px_4px_rgba(205,205,213,.5)] duration-[.5s]" ><a href="https://github.com/twizshaq" target="_blank" rel="noopener noreferrer"><LuGithub /></a></span>
                         <span className="hover:text-[#ff4964] hover:drop-shadow-[0px_0px_4px_rgba(255,13,67,.5)] duration-[.5s] heart-icon" onClick={toggleHeart}>
                             {isHeart ? <span className='heart-icon-filled'><FaHeart /></span> : <FaRegHeart />}
                         </span>
