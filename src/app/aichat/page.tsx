@@ -185,7 +185,7 @@ const handleClickOutside = (event: MouseEvent) => { // Explicitly define 'event'
                     className='fixed max-mobile3:left-[0px] left-[0px] w-[100vw] max-mobile3:top-[-50px] z-[0] top-[0px] pl-[15px] pr-[5px] pb-[20px] max-mobile3:h-[130px] h-[140px] bg-[#101013] backdrop-blur-[5px] bg-opacity-[.8] flex max-mobile3:blur-[3px] blur-[10px]'>
                 </div>
                 <div 
-                    className='fixed max-mobile3:left-[0px] left-[0px] w-[100vw] max-mobile3:top-[-2px] z-[1] top-[0px] pl-[15px] pr-[5px] pb-[2px] max-mobile3:h-[7px] h-[0px] bg-[#101013] bg-opacity-[1] flex '>
+                    className='fixed max-mobile3:left-[0px] left-[0px] w-[100vw] max-mobile3:top-[-2px] z-[1] top-[15px] pl-[15px] pr-[5px] pb-[2px] max-mobile3:h-[7px] h-[0px] bg-[#101013] bg-opacity-[1] flex '>
                 </div>
                 {/* Dropdown content */}
                 {showDetails && (
@@ -240,7 +240,7 @@ const handleClickOutside = (event: MouseEvent) => { // Explicitly define 'event'
                 <div className='flex flex-col self-center text-center gap-[5px] z-[2]'>
                     <p className='font-semibold text-[1.5rem]'>Hey there, I'm <span className='fontshine1'>zelyx</span> shaq's personal assistant!</p>
                 </div>
-                <div className='flex flex-col bg-black bg-opacity-[.8] rounded-[35px] gap-[15px] pb-[16px] px-[15px] w-[550px] max-w-[90vw] border-[3px] border-transparent focus-within:border-[#24242a] transition-colors duration-300 z-[10]'>
+                <div className='flex flex-col bg-black bg-opacity-[.8] rounded-[35px] gap-[15px] pb-[16px] px-[15px] w-[650px] max-w-[90vw] border-[2px] border-transparent focus-within:border-[#24242a] transition-colors duration-300 z-[10]'>
                     <div className='flex items-end justify-end'>
                         <textarea
                         placeholder='Ask a question!'
@@ -260,7 +260,7 @@ const handleClickOutside = (event: MouseEvent) => { // Explicitly define 'event'
             </div>
             )}
             {hasSentMessage && (
-            <div className="flex flex-col w-[550px] max-w-[90vw] mt-[120px] pb-[120px] max-mobile3:mt-[80px]">
+            <div className="flex flex-col w-[550px] max-w-[90vw] mt-[120px] pb-[150px] max-mobile3:mt-[80px]">
                 {messages.map((msg, index) => (
                     <div key={index} className={msg.isAI ? "aiMessage" : "userMessage"}>
                         <p>{msg.text}</p>
@@ -276,7 +276,7 @@ const handleClickOutside = (event: MouseEvent) => { // Explicitly define 'event'
         )}
             {hasSentMessage && (
                 <div className='fixed items-center justify-center bottom-[0px] flex flex-col pb-[15px] px-[15px] w-[550px] max-w-[90vw] h-[85px]'>
-                    <div className='absolute flex items-end justify-end bg-black bg-opacity-[.6] pb-[15px] px-[15px] bottom-[20px] w-[550px] max-w-[90vw] rounded-[30px] border-[2.5px] border-[#24242a]'>
+                    <div className='absolute flex items-end justify-end bg-black bg-opacity-[.6] pb-[15px] px-[15px] bottom-[20px] w-[600px] max-w-[90vw] rounded-[30px] border-[2px] border-[#24242a]'>
                         <textarea
                         placeholder='Ask a question!'
                         className='w-[100%] h-[70px] outline-none bg-black bg-opacity-[0] pt-[15px] pr-[100px] font-semibold pl-[10px] resize-none'

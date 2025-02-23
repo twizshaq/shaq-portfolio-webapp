@@ -257,7 +257,7 @@ const handleSubmit = (e: React.FormEvent) => {
         <div>
           <h1 className="text-[1.7rem] font-bold mb-[20px]">Work Experience</h1>
           <div className="xp-ctns">
-              <button onClick={() => setShowDetails(!showDetails)}className="bg-[--inner-bg-color] rounded-[30px] border-[2.5px] border-[--outline-color] flex items-center overflow-hidden transition-[transform,box-shadow] duration-300 items-center">
+              <button onClick={() => setShowDetails(!showDetails)}className="bg-[--inner-bg-color] rounded-[30px] border-[2.5px] border-[--outline-color] flex items-center overflow-hidden transition-[transform,box-shadow] duration-300 items-center hover:bg-[#66666b] hover:bg-opacity-[.2]">
                 <Image src="https://shaqportfoliostorage.blob.core.windows.net/images/protexxa_logo.png" alt="Protexxa Logo" height={100} width={100} className="-mr-[20px]"/>
                 <div className="flex flex-col px-[15px] pb-[15px] pt-[5px] items-start">
                   <p className="text-[1.7rem] font-bold">Protexxa</p>
@@ -269,7 +269,7 @@ const handleSubmit = (e: React.FormEvent) => {
           {showDetails && (
             <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-[.5] flex justify-center items-center z-50">
               <div className="relative">
-                <div ref={detailsRef} className=" px-[30px] pt-[20px] rounded-[40px] max-w-[90vw] w-fit relative border-[3px] border-[#38383e] bg-opacity-20 backdrop-blur-[30px] flex flex-col items-end" >
+                <div ref={detailsRef} className=" px-[30px] pt-[20px] rounded-[40px] max-w-[90vw] w-fit relative border-[3px] border-[#38383e] backdrop-blur-[20px] flex flex-col items-end" >
                 <h2 className="text-[1.5rem] font-bold mb-4 items-start text-left w-[100%]">Protexxa - Security Analyst</h2>
                 {/* <button className="absolute top-[30px] right-[45px]" onClick={() => setShowDetails(false)}>
                     <div className="absolute w-[23px] h-[4px] bg-white rounded-[30px] rotate-[45deg]"></div>
@@ -416,10 +416,10 @@ const handleSubmit = (e: React.FormEvent) => {
 
 
           <p className="self-end absolute mt-[177px] font-bold mr-[30px] px-[5px] tracking-[.5px] z-[1]"><span className={messageFocused ? "fontshine1" : "text-white"}>Message</span></p>
-          <p className="self-end absolute mt-[168.2px] font-bold mr-[30px] px-[5px] tracking-[.5px] bg-[--mainbg-color]"><span className="text-[--mainbg-color]">Message</span></p>
+          <p className="self-end absolute mt-[168.3px] font-bold mr-[30px] px-[5px] tracking-[.5px] bg-[--mainbg-color]"><span className="text-[--mainbg-color]">Message</span></p>
           <textarea ref={contactMessageRef} className="flex items-center my-[13] max-w-[90vw] w-[500px] h-[150px] p-[13px_20px] pointer-events-auto outline-none rounded-[30px] border-[2.5px] border-[--outline-color] font-semibold resize-none bg-[--inner-bg-color]" placeholder="Your Message..." onFocus={() => setMessageFocused(true)} onBlur={() => setMessageFocused(false)} required/>
 
-          <button ref={contactBtnRef} type="submit" className="bg-inner-bg-color px-[40px] py-[7px] text-[18px] border-[2.5px] border-[--outline-color] rounded-full self-center font-semibold m-3 transition-transform duration-1000 bg-[--inner-bg-color]">Submit</button>
+          <button ref={contactBtnRef} type="submit" className="bg-inner-bg-color px-[40px] py-[7px] text-[18px] border-[2.5px] border-[--outline-color] rounded-full self-center font-semibold m-3 transition-transform duration-1000 bg-[--inner-bg-color] hover:bg-[#66666b] hover:bg-opacity-[.2]">Submit</button>
         </form>
       </div>
         <footer className="footer-h-pg">
