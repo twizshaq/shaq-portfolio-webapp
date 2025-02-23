@@ -108,7 +108,7 @@ export default function Projects() {
                 <div className="project-nav">
                 <form className="search-ctn">
                     <input
-                    className="h-fit w-[90vw] max-w-[400px] rounded-full border-[3px] border-[--outline-color] bg-[var(--inner-bg-color)] pl-12 outline-none font-semibold py-[11px]"
+                    className="h-fit w-[90vw] max-w-[400px] rounded-full border-[2.7px] border-[--outline-color] bg-[var(--inner-bg-color)] pl-12 outline-none font-semibold py-[11px]"
                     type="text"
                     placeholder="Search"
                     value={searchTerm}

@@ -240,7 +240,7 @@ const handleClickOutside = (event: MouseEvent) => { // Explicitly define 'event'
                 <div className='flex flex-col self-center text-center gap-[5px] z-[2]'>
                     <p className='font-semibold text-[1.5rem]'>Hey there, I'm <span className='fontshine1'>zelyx</span> shaq's personal assistant!</p>
                 </div>
-                <div className='flex flex-col bg-black bg-opacity-[.8] rounded-[35px] gap-[15px] pb-[16px] px-[15px] w-[550px] max-w-[90vw] border-[3px] border-transparent focus-within:border-[--outline-color] transition-colors duration-300 z-[10]'>
+                <div className='flex flex-col bg-black bg-opacity-[.8] rounded-[35px] gap-[15px] pb-[16px] px-[15px] w-[550px] max-w-[90vw] border-[3px] border-transparent focus-within:border-[#24242a] transition-colors duration-300 z-[10]'>
                     <div className='flex items-end justify-end'>
                         <textarea
                         placeholder='Ask a question!'
@@ -276,7 +276,7 @@ const handleClickOutside = (event: MouseEvent) => { // Explicitly define 'event'
         )}
             {hasSentMessage && (
                 <div className='fixed items-center justify-center bottom-[0px] flex flex-col pb-[15px] px-[15px] w-[550px] max-w-[90vw] h-[85px]'>
-                    <div className='absolute flex items-end justify-end bg-black bg-opacity-[.6] pb-[15px] px-[15px] bottom-[20px] w-[550px] max-w-[90vw] rounded-[30px] border-[2.5px] border-[--outline-color]'>
+                    <div className='absolute flex items-end justify-end bg-black bg-opacity-[.6] pb-[15px] px-[15px] bottom-[20px] w-[550px] max-w-[90vw] rounded-[30px] border-[2.5px] border-[#24242a]'>
                         <textarea
                         placeholder='Ask a question!'
                         className='w-[100%] h-[70px] outline-none bg-black bg-opacity-[0] pt-[15px] pr-[100px] font-semibold pl-[10px] resize-none'
