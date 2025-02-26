@@ -16,6 +16,15 @@
   --inner-bg-color: rgba(0, 0, 0, 0.6);
 }
 
+.block {
+  display: block !important;
+  /* Use !important for testing, remove later if not needed */
+}
+
+.hidden {
+  display: none;
+}
+
 /* Target the blockquote directly (you already tried this, but just in case) */
 .twitter-tweet {
   margin: 0 !important;
@@ -812,7 +821,7 @@ body.no-scroll {
   justify-content: center;
   /* background-color: green; */
   padding: 10px;
-  gap: 5px;
+  gap: 7px;
   /* max-width: 350px; */
   /* border-radius: 40px; */
 }
@@ -955,17 +964,17 @@ body.no-scroll {
 .ai-title {
   position: relative;
   margin-top: -3px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   padding-left: 7px;
 }
 
 .ai-desc {
   position: relative;
-  font-size: .87rem;
-  padding: 0px 0px 10px 7px;
+  font-size: .83rem;
+  padding: 0px 0px 0px 7px;
   font-weight: 500;
-  bottom: 3px;
+  /* bottom: 3px; */
 }
 
 @media (max-width: 575px) {

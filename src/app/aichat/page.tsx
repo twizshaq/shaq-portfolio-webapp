@@ -2,6 +2,9 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { VscSparkleFilled } from "react-icons/vsc";
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import { TiTick } from "react-icons/ti";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
@@ -13,6 +16,7 @@ interface Message {
 }
 
 export default function Aichat() {
+    const pathname = usePathname();
     const [showDetails, setShowDetails] = useState(false);
     const [loading, setLoading] = useState(false);
     const [userMessage, setUserMessage] = useState('');
@@ -174,7 +178,7 @@ const handleClickOutside = (event: MouseEvent) => { // Explicitly define 'event'
                 {/* Toggle button */}
                 <button 
                     onClick={() => setShowDetails(!showDetails)}
-                    className='fixed max-mobile3:left-[80px] max-mobile3:top-[13px] z-[1] top-[85px] left-1/2 -translate-x-1/2 rounded-[15px] pl-[15px] pr-[5px] pb-[2px] hover:bg-white hover:bg-opacity-[.1] flex'
+                    className='fixed max-mobile3:left-[80px] max-mobile3:top-[13px] z-[1] top-[85px] left-1/2 -translate-x-1/2 rounded-[35px] pl-[15px] pr-[5px] pb-[2px] hover:bg-white hover:bg-opacity-[.1] flex'
                 >
                     <div className="text-[2rem] font-extrabold">zelyx</div>
                     <span className='text-[2rem] mt-[11px]'>
@@ -189,15 +193,16 @@ const handleClickOutside = (event: MouseEvent) => { // Explicitly define 'event'
                 </div>
                 {/* Dropdown content */}
                 {showDetails && (
-                    <div onClick={() => setShowDetails(!showDetails)} className='fixed flex justify-center top-[150px] w-fit h-[150px] bg-black/60 backdrop-blur-sm border-[2.5px] border-[--outline-color] border-solid rounded-[35px] overflow-hidden z-[1] max-mobile3:top-[70px] max-mobile3:left-[15px] z-[20] mobile3:left-1/2 mobile3:-translate-x-1/2'>
+                    <div onClick={() => setShowDetails(!showDetails)} className='fixed flex justify-center top-[150px] w-fit h-fit bg-black/60 backdrop-blur-sm border-[2.5px] border-[--outline-color] border-solid rounded-[35px] overflow-hidden z-[1] max-mobile3:top-[70px] max-mobile3:left-[15px] z-[20] mobile3:left-1/2 mobile3:-translate-x-1/2'>
                     <div className='ai-opt-child-ctn'>
-                        <div className='w-[250px] h-[60px] text-start p-[7px] rounded-[22px] bg-white bg-opacity-[.3]'>
+                        <Link href="/aichat" className={`flex flex-col w-[220px] h-fit text-start p-[7px] rounded-[22px] ${pathname === '/aichat'? 'bg-white bg-opacity-[.3]': 'bg-transparent hover:bg-white hover:bg-opacity-[.1]'}`}>
                         <p className='ai-title'>zelyx</p>
-                        <span className='chatbot-tick'><FaCheck /></span>
+                        {/* <span className='chatbot-tick'><FaCheck /></span> */}
                         <p className='ai-desc'>Assistive chat bot</p>
+                        {/* <span className='absolute text-[--main-accent-color] text-[1.6rem] ml-[55px] -mt-[2px] rotate-[5deg]'><TiTick /></span> */}
                         {/* <button
                             onClick={handleZelyxButtonClick}
-                            className={`absolute flex items-center justify-center h-[50px] w-[50px] rounded-[17px] right-[15px] top-[16px] gap-[4px] ${
+                            className={`absolute flex items-center justify-center h-fit w-[50px] py-[11px] rounded-[15px] right-[16px] top-[15.5px] gap-[4px] ${
                                 isZelyxHighlighted
                                 ? 'bg-[var(--main-accent-color)]'
                                 : 'bg-transparent hover:bg-[var(--main-accent-color)]'
@@ -207,9 +212,9 @@ const handleClickOutside = (event: MouseEvent) => { // Explicitly define 'event'
                             <div className='bg-white w-[4px] h-[25px] rounded-full'></div>
                             <div className='bg-white w-[4px] h-[16px] rounded-full'></div>
                             <div className='bg-white w-[4px] h-[10px] rounded-full'></div>
-                            </button> */}
-                        </div>
-                        <button className='w-[250px] h-[60px] text-start p-[7px] rounded-[22px] bg-transparent hover:bg-white hover:bg-opacity-[.3]'>
+                        </button> */}
+                        </Link>
+                        <button className={`flex flex-col w-[220px] h-fit text-start p-[7px] rounded-[22px] ${pathname === '/aichat/imersa'? 'bg-white bg-opacity-[.3]': 'bg-transparent hover:bg-white hover:bg-opacity-[.1]'}`}>
                             <p className='ai-title'>?????</p>
                             <p className='ai-desc'>Coming Soon!</p>
                         </button>

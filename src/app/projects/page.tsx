@@ -229,7 +229,7 @@ export default function Projects() {
                     </div>
                     <div className='flex flex-wrap gap-[50px] justify-start max-w-[1300px] w-[100vw] px-[30px] z-0 max-mobile3:top-[-5px] max-mobile3:gap-[30px] max-whenwrap3:justify-center  mb-[70px] max-mobile5:mb-[30px] o'>
                         {legacyProjects.map((project, index) => (
-                        <div key={index} className="w-[365px] h-[200px] rounded-[40px] border-[3.3px] overflow-hidden border-[--outline-color-light]">
+                        <div key={index} className="w-[363px] h-[200px] rounded-[40px] border-[3.3px] overflow-hidden border-[--outline-color-light]">
                             <div className="flex items-end w-fit max-w-[90vw] h-[200px]">
                                 <div className='font-bold text-[2rem] ml-[20px] mb-[20px] mr-[30px] leading-[30px] text-start text-shadow-md drop-shadow-[0px_0px_2px_rgba(255,255,255,.8)]'>{project.name}</div>
                             </div>

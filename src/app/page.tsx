@@ -229,28 +229,6 @@ const handleSubmit = (e: React.FormEvent) => {
           <p className="font-medium text-[1rem] max-w-[700px] text-center leading-relaxed">
             Junior in tech expanding my skills in AI, Software/Web Development and engineering through hands-on projects. This portfolio highlights my journey, showcasing my projects, skills, and growth as I build a strong professional presence.
           </p>
-          <div className="absolute h-[400px] w-[700px] max-w-[90vw] -z-[1] max-mobile3:hidden" ref={parentRef}>
-            {blobConfigs.map((config, index) => (
-              <motion.div
-                key={index}
-                className={`rounded-full absolute`}
-                style={{
-                  width: `${config.size}px`,
-                  height: `${config.size}px`,
-                  backgroundColor: config.color,
-                  filter: `blur(${config.blur}px)`,
-                  x: blobPositions[index].x,
-                  y: blobPositions[index].y,
-                }}
-                animate={{ x: targetPositions[index]?.x, y: targetPositions[index]?.y }}
-                transition={{
-                  duration: 3,
-                  ease: "easeInOut",
-                  onComplete: updateBlobPositions
-                }}
-              />
-            ))}
-          </div>
         </div>
     <div>
       <div className="max-w-[1200px] w-[90vw] p-5 text-center flex flex-col justify-center items-center gap-[120px] flex mb-[100px]">
