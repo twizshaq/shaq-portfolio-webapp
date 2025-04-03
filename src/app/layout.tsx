@@ -10,7 +10,7 @@ import styles from '@/page.module.css';
 
 const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['500', '700']
+  weight: ['400','500','700']
 });
 
 export default function RootLayout({
@@ -82,17 +82,17 @@ const toggleNav = () => {
           <nav className={`navigator ${isNavOpen ? 'open' : ''}`}>
             <Link href="/" onClick={toggleNav}>
               <span id="home" className={`navtext ${pathname === "/" ? "active-navbar" : ""}`}>
-                HOME
+                Home
               </span>
             </Link>
             <Link href="/projects" onClick={toggleNav}>
               <span id="projects" className={`navtext ${pathname === "/projects" ? "active-navbar" : ""}`}>
-                PROJECTS
+                Projects
               </span>
             </Link>
             <Link href="/aichat" onClick={toggleNav}>
               <span id="aichat" className={`navtext ${pathname === "/aichat" ? "active-navbar" : ""}`}>
-                AI CHAT
+                AI Bots
               </span>
             </Link>
           </nav>

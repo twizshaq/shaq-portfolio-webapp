@@ -51,6 +51,7 @@ export default function Projects() {
     const newProjects: Project[] = [ // Type newProjects array
         { name: "Insta Recipe", link: "/projects/insta-recipe", imgSrc: "https://insta-recipe-assets.s3.us-east-1.amazonaws.com/insta-recipe-thumbnail.jpg", alt: "Insta Recipe Thumbnail", isFavorite: true },
         { name: "Portfolio Web-App", link: "/projects/portfolio-webapp", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/portfolio-webapp-project-pic.png", alt: "Portfolio Web-App Thumbnail", isFavorite: true },
+        // { name: "Design Projects", link: "/projects/design-projects", imgSrc: "https://shaqportfoliostorage.blob.core.windows.net/images/portfolio-webapp-project-pic.png", alt: "Design Projects Thumbnail", isFavorite: true },
     ];
 
     // Combine project lists for unified search and favorite filtering
@@ -221,7 +222,7 @@ export default function Projects() {
                             >
                             <h2 className="text-[1.5rem] font-bold mb-[10px]">Legacy Projects</h2>
                             <p>
-                                Projects where I didn't put as much effort into them or felt satisfied with the end results.
+                                Projects where I didn't put as much effort into them or felt i could've done better.
                             </p>
                             </div>
                         </div>

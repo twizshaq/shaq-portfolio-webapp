@@ -14,6 +14,7 @@ module.exports = {
     			custom: '1000px',
     			mobile: '600px',
     			mobile2: '495px',
+          h565: { raw: '(max-height: 620px)' },
           mobile4: '487px',
 				  mobile3: '860px',
           mobile5: '820px',

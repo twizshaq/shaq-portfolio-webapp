@@ -185,11 +185,10 @@ const handleClickOutside = (event: MouseEvent) => { // Explicitly define 'event'
                     <MdKeyboardArrowDown />
                     </span>
                 </button>
-                <div 
-                    className='fixed max-mobile3:left-[0px] left-[0px] w-[100vw] max-mobile3:top-[-50px] z-[0] top-[0px] pl-[15px] pr-[5px] pb-[20px] max-mobile3:h-[130px] h-[140px] bg-[#101013] backdrop-blur-[5px] bg-opacity-[.8] flex max-mobile3:blur-[3px] blur-[10px]'>
+                <div className='fixed max-mobile3:left-[0px] left-[0px] w-[100vw] max-mobile3:top-[-50px] z-[0] top-[0px] pl-[15px] pr-[5px] pb-[20px] max-mobile3:h-[130px] h-[140px] bg-[#0b0b0e] backdrop-blur-[5px] bg-opacity-[.8] flex max-mobile3:blur-[3px] blur-[10px]'>
                 </div>
                 <div 
-                    className='fixed max-mobile3:left-[0px] left-[0px] w-[100vw] max-mobile3:top-[-2px] z-[1] top-[15px] pl-[15px] pr-[5px] pb-[2px] max-mobile3:h-[7px] h-[0px] bg-[#101013] bg-opacity-[1] flex '>
+                    className='fixed max-mobile3:left-[0px] left-[0px] w-[100vw] max-mobile3:top-[-2px] z-[1] top-[15px] pl-[15px] pr-[5px] pb-[2px] max-mobile3:h-[7px] h-[0px] bg-[#0b0b0e] bg-opacity-[1] flex '>
                 </div>
                 {/* Dropdown content */}
                 {showDetails && (
@@ -214,10 +213,10 @@ const handleClickOutside = (event: MouseEvent) => { // Explicitly define 'event'
                             <div className='bg-white w-[4px] h-[10px] rounded-full'></div>
                         </button> */}
                         </Link>
-                        <button className={`flex flex-col w-[220px] h-fit text-start p-[7px] rounded-[22px] ${pathname === '/aichat/imersa'? 'bg-white bg-opacity-[.3]': 'bg-transparent hover:bg-white hover:bg-opacity-[.1]'}`}>
-                            <p className='ai-title'>?????</p>
+                        <Link href="/aichat/imersa" className={`flex flex-col w-[220px] h-fit text-start p-[7px] rounded-[22px] ${pathname === '/aichat/imersa'? 'bg-white bg-opacity-[.3]': 'bg-transparent hover:bg-white hover:bg-opacity-[.1]'}`}>
+                            <p className='ai-title'>??????</p>
                             <p className='ai-desc'>Coming Soon!</p>
-                        </button>
+                        </Link>
                     </div>
                 </div>
                 )}

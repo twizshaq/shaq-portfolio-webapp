@@ -164,13 +164,14 @@ export default function Imersa() {
   return (
     <div className="relative flex flex-col justify-center items-center min-h-[100dvh]">
       {/* Background container for camera or fallback */}
-      <div className="absolute top-0 left-0 w-full h-full z-[-10]">
+      <div className="absolute top-[0px] w-[100vw] h-[70dvh] z-[-10]">
         {isMobile ? (
           <>
             <video
               ref={videoRef}
               playsInline
               muted
+              autoPlay
               className={`w-full h-full object-cover ${cameraStarted ? "block" : "hidden"}`}
             />
             {cameraError && (
@@ -223,7 +224,7 @@ export default function Imersa() {
             <div className="ai-opt-child-ctn">
               <Link
                 href="/aichat"
-                className={`flex flex-col w-[220px] h-fit text-start p-[7px] rounded-[22px] ${
+                className={`flex flex-col w-[220px] h-fit text-start p-[7px] rounded-[20px] ${
                   pathname === "/aichat"
                     ? "bg-white bg-opacity-[.3]"
                     : "bg-transparent hover:bg-white hover:bg-opacity-[.1]"
@@ -234,7 +235,7 @@ export default function Imersa() {
               </Link>
               <Link
                 href="/aichat/imersa"
-                className={`flex flex-col w-[220px] h-fit text-start p-[7px] rounded-[22px] ${
+                className={`flex flex-col w-[220px] h-fit text-start p-[7px] rounded-[20px] ${
                   pathname === "/aichat/imersa"
                     ? "bg-white bg-opacity-[.3]"
                     : "bg-transparent hover:bg-white hover:bg-opacity-[.1]"

@@ -5,7 +5,7 @@
 :root {
   /* --mainbg-color: #16161a; */
   --ai-pdq-bgcolor: #17171b;
-    --mainbg-color: #101013;
+    --mainbg-color: #0b0b0e;
   /* --main-accent-color: #ea8145; */
   --outline-color: #66666b;
   --outline-color-light: #66666b;
@@ -14,6 +14,44 @@
   --main-blob-color: #186db3;
 
   --inner-bg-color: rgba(0, 0, 0, 0.6);
+}
+
+.skills-ctns {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  border-width: 1.5px;
+  border-color: #2c2c2e;
+  gap: 20px;
+  /* max-width: 90vw; */
+  /* width: fit-content; */
+  /* min-width: fit-content; */
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--inner-bg-color);
+  /* blue-400 at 20% opacity */
+  padding: 1.25rem;
+  /* equivalent to Tailwind's p-5 */
+  border-radius: 25px;
+}
+
+.typewriter-letter {
+  display: inline-block;
+  /* Ensure spans align properly */
+  animation: fadeIn 0.5s ease-in;
+  /* Fade-in animation over 0.5s */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    /* Start invisible */
+  }
+
+  to {
+    opacity: 1;
+    /* Fully visible */
+  }
 }
 
 .block {
@@ -573,17 +611,18 @@ body.no-scroll {
 }
 
 .navigator {
-  border-radius: 50px;
-  border-width: 2px;
-  border-color: var(--outline-color);
+  border-radius: 15px;
+  /* border-width: 0px; */
+  /* border-color: var(--outline-color); */
   height: 47px;
   align-items: center;
   justify-content: space-evenly;
+  /* font-weight: 400; */
   display: flex;
   top: 30px;
-  position: fixed;
-  background: var(--inner-bg-color);
-  backdrop-filter: blur(5px);
+  position: absolute;
+  /* background: rgba(0, 0, 0, 0.2); */
+  backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(37px);
   padding: 8px 6px;
   margin: 0 auto;
@@ -602,15 +641,20 @@ body.no-scroll {
 }
 
 .navtext {
-  font-weight: 800;
+  font-weight: 600;
   font-size: larger;
   /* color: white; */
-  padding: 5px 20px;
-  letter-spacing: 2px;
+  padding: 5px 25px;
+  /* letter-spacing: 2px; */
   line-height: 1.2;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.navtext:hover{
+  color: var(--main-accent-color);
+  transition: .6s;
 }
 
 .footer {
@@ -1157,6 +1201,7 @@ body.no-scroll {
 
   .navigator {
     flex-direction: column;
+    position: fixed;
     border-radius: 0;
     border: none;
     gap: 30px;
@@ -1754,8 +1799,9 @@ body.no-scroll {
 
 .xp-ctns {
   display: flex;
+  overflow-x: scroll;
   justify-content: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 40px;
 }
 
@@ -1802,7 +1848,7 @@ body.no-scroll {
   /* margin-bottom: 0px; */
   /* padding: 0px 0px; */
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .protexxa-date {
