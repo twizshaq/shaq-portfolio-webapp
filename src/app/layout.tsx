@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { Roboto } from 'next/font/google';
-import styles from '@/page.module.css';
+// import styles from '@/page.module.css';
 
 const roboto = Roboto({
   subsets: ['latin'],

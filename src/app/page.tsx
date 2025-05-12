@@ -246,7 +246,7 @@ export default function Home() {
             src="https://pioneering-places-492531.framer.app"
             className="w-[100vw] h-[100dvh] absolute -z-[10]"
           ></iframe>
-          <p className="text-[3.4rem] font-bold flex justify-center leading-[70px] max-sm:text-[3rem]">
+          <p className="text-[3rem] font-bold flex justify-center leading-[70px] max-sm:text-[1.5rem]">
             {displayText.split("").map((char, index) => (
               <span key={index} className="typewriter-letter">
                 {char === " " ? "\u00a0" : char}
@@ -254,7 +254,7 @@ export default function Home() {
             ))}
           </p>
           <motion.div
-            className="absolute bg-[#092cdc]/10 backdrop-blur-[5px] py-[7px] px-[30px] rounded-[15px] font-bold rotate-[20deg] border-[2.3px] border-[#0a90ff]/60 mt-[80px] max-sm:mt-[73px] inline-block"
+            className="absolute bg-[#092cdc]/10 backdrop-blur-[5px] py-[7px] px-[30px] rounded-[15px] font-semibold rotate-[20deg] border-[2.3px] border-[#0a90ff]/60 mt-[75px] max-sm:mt-[68px] inline-block text-[.9rem]"
             variants={fadeUpVariants}
             initial="hidden"
             animate={isTypingComplete ? "visible" : "hidden"}
@@ -271,7 +271,7 @@ export default function Home() {
               initial="hidden"
               animate={isTypingComplete ? "visible" : "hidden"}
               transition={{ delay: 2, duration: 1 }}
-              className="absolute bottom-[60px] font-bold z-[5]"
+              className="absolute bottom-[55px] font-semibold z-[5] text-[.9rem]"
               onClick={() => {
                 setShowSection(true);
                 setDivVisible(false);
@@ -305,11 +305,11 @@ export default function Home() {
             {/* WORK EXPERIENCE / CERTIFICATIONS / SKILLS */}
             <div className="max-w-[1200px] w-[90vw] p-5 text-center flex flex-col justify-center items-center gap-[120px] flex mb-[100px]">
               <div className="flex flex-col items-center gap-[20px]">
-                <h1 className="text-[1.7rem] font-semibold mb-[20px]">Work Experience</h1>
+                <h1 className="text-[1.5rem] font-semibold mb-[20px]">Work Experience</h1>
                 <div className="xp-ctns">
                   <button
                     onClick={() => setShowDetails(!showDetails)}
-                    className="bg-[var(--inner-b-color)] rounded-[25px] border-[#2c2c2e] border-[2px] flex items-start overflow-hidden transition-[transform,box-shadow] duration-300 hover:bg-[#66666b] hover:bg-opacity-[.15] w-fit h-fit pt-[5px] pb-[15px] px-[16px] gap-[20px] min-w-fit"
+                    className="bg-[var(--inner-b-color)] rounded-[25px] flex items-start overflow-hidden transition-[transform,box-shadow] duration-300 w-fit h-fit pt-[5px] pb-[15px] px-[16px] gap-[20px] min-w-fit"
                   >
                     <Image
                       src="https://shaq-portfolio-webapp.s3.us-east-1.amazonaws.com/protexxa-logo.png"
@@ -319,9 +319,9 @@ export default function Home() {
                       className="mt-[10px] rounded-[5px]"
                     />
                     <div className="flex flex-col items-start gap-[2px]">
-                      <p className="text-[1.8rem] font-bold">Protexxa</p>
+                      <p className="text-[1.3rem] font-semibold">Protexxa</p>
                       <p className="jobTitle">Security Analyst</p>
-                      <p className="text-[.8rem] italic">Aug 2023 - Aug 2024</p>
+                      <p className="text-[.8rem]">Aug 2023 - Aug 2024</p>
                     </div>
                   </button>
                   {showDetails && (
@@ -359,7 +359,7 @@ export default function Home() {
               <div className="flex flex-col-reverse flex-wrap gap-[100px] justify-center">
                 <div className="flex flex-col items-center gap-[0px]">
                   <div className="flex gap-[10px]">
-                    <h1 className="text-[1.7rem] mb-[30px] font-bold">Certifications</h1>
+                    <h1 className="text-[1.5rem] mb-[30px] font-semibold">Certifications</h1>
                     <button className="text-[1.2rem] mr-[17px] self-start mt-[12px]" onClick={() => setIsPopupOpen(true)}>
                       <PiInfoBold />
                     </button>
@@ -404,11 +404,11 @@ export default function Home() {
                 </div>
                 {/* Skills/Tools */}
                 <div className="max-w-[90vw] w-fit pb-[20px] text-center overflow-hidden">
-                  <h1 className="text-[1.7rem] mb-[30px] font-bold">Skills/Tools</h1>
+                  <h1 className="text-[1.5rem] mb-[30px] font-semibold">Skills/Tools</h1>
                   <div className="flex gap-[20px] max-w-[700px] flex-wrap justify-center">
                     <div className="flex gap-[20px] justify-start overflow-x-scroll scrollbar-hidden">
-                      <div className="min-w-[370px] hover:bg-[#66666b] hover:bg-opacity-[.15] skills-ctns">
-                        <p className="font-semibold text-[1.2rem]">Cloud & Infra</p>
+                      <div className="min-w-[370px] skills-ctns">
+                        <p className="font-semibold text-[1.1rem]">Cloud & Infra</p>
                         <div className="flex gap-[20px]">
                           <Image src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/aws-logo.svg" alt="AWS Logo" width={50} height={50} />
                           <Image src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/azure-logo.svg" alt="Azure Logo" width={50} height={50} />
@@ -417,8 +417,8 @@ export default function Home() {
                           <Image src="https://shaq-portfolio-webapp.s3.us-east-1.amazonaws.com/terraform-icon.svg" alt="Terraform Logo" width={50} height={50} />
                         </div>
                       </div>
-                      <div className="min-w-fit hover:bg-[#66666b] hover:bg-opacity-[.15] skills-ctns">
-                        <p className="font-semibold text-[1.2rem]">Web Dev</p>
+                      <div className="min-w-fit skills-ctns">
+                        <p className="font-semibold text-[1.1rem]">Web Dev</p>
                         <div className="flex gap-[20px]">
                           <Image src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/tailwind-logo.svg" alt="Tailwind CSS Logo" width={50} height={50} />
                           <Image src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/supabase-logo.svg" alt="Supabase Logo" width={50} height={50} />
@@ -426,24 +426,24 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="flex gap-[20px] justify-start overflow-x-scroll scrollbar-hidden">
-                      <div className="min-w-fit hover:bg-[#66666b] hover:bg-opacity-[.15] skills-ctns">
-                        <p className="font-semibold text-[1.2rem]">Languages</p>
+                      <div className="min-w-fit skills-ctns">
+                        <p className="font-semibold text-[1.1rem]">Languages</p>
                         <div className="flex gap-[20px]">
                           <Image src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/python-logo.svg" alt="Python Logo" width={50} height={50} />
                           <Image src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/javascript-logo.svg" alt="Javascript Logo" width={50} height={50} className="rounded-[10px]" />
                           <Image src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/typescript-logo.svg" alt="Typescript Logo" width={50} height={50} />
                         </div>
                       </div>
-                      <div className="min-w-fit hover:bg-[#66666b] hover:bg-opacity-[.15] skills-ctns">
-                        <p className="font-semibold text-[1.2rem]">Design</p>
+                      <div className="min-w-fit skills-ctns">
+                        <p className="font-semibold text-[1.1rem]">Design</p>
                         <div className="flex gap-[20px]">
                           <Image src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/lllustrator-logo.svg" alt="Illustrator Logo" width={50} height={50} />
                           <Image src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/photoshop-logo.svg" alt="Photoshop Logo" width={50} height={50} />
                           <Image src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/figma-logo.svg" alt="Figma Logo" width={30} height={30} />
                         </div>
                       </div>
-                      <div className="min-w-fit hover:bg-[#66666b] hover:bg-opacity-[.15] skills-ctns">
-                        <p className="font-semibold text-[1.2rem]">Security</p>
+                      <div className="min-w-fit skills-ctns">
+                        <p className="font-semibold text-[1.1rem]">Security</p>
                         <div className="flex gap-[20px]">
                           <Image src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/splunk-logo.svg" alt="Splunk Logo" width={80} height={80} className="invert" />
                           <Image src="https://shaqportfoliostorage.blob.core.windows.net/skills-tools/jira-logo.svg" alt="Jira Logo" width={50} height={50} />
@@ -455,69 +455,6 @@ export default function Home() {
               </div>
             </div>
             {/* CONTACT SECTION */}
-            <div className="max-w-fit w husky-[90vw] mx-auto mb-0 p-5 text-center flex flex-col items-center relative">
-              <h1 className="font-bold text-[1.7rem] mb-[30px]">Contact</h1>
-              <form ref={contactFormRef} className="flex flex-col max-w-fit items-center gap-[40px]" onSubmit={handleSubmit}>
-                <div className="relative flex flex-col items-end">
-                  <p className="self-end absolute -mt-[12px] font-bold mr-[30px] px-[5px] tracking-[.5px] z-[1]">
-                    <span className={nameFocused ? "fontshine1" : "text-white"}>Name</span>
-                  </p>
-                  <p className="self-end absolute -mt-[21.5px] font-bold mr-[30px] px-[5px] tracking-[.5px] bg-[--mainbg-color]">
-                    <span className="text-[--mainbg-color]">Name</span>
-                  </p>
-                  <input
-                    ref={contactNameRef}
-                    className="flex items-center my-[13] max-w-[90vw] w-[500px] p-[13px_20px] pointer-events-auto outline-none rounded-[20px] border-[2.5px] border-[--outline-color] bg-[--inner-bg-color] font-semibold"
-                    type="text"
-                    placeholder="Your Name"
-                    onFocus={() => setNameFocused(true)}
-                    onBlur={() => setNameFocused(false)}
-                    required
-                  />
-                </div>
-                <div className="relative flex flex-col items-end">
-                  <p className="self-end absolute mt-[-12px] font-bold mr-[30px] px-[5px] tracking-[.5px] z-[1]">
-                    <span className={emailFocused ? "fontshine1" : "text-white"}>Email</span>
-                  </p>
-                  <p className="self-end absolute mt-[-12px] font-bold mr-[30px] px-[5px] tracking-[.5px] bg-[--mainbg-color]">
-                    <span className="text-[--mainbg-color]">Email</span>
-                  </p>
-                  <input
-                    ref={contactEmailRef}
-                    className="flex items-center my-[13] max-w-[90vw] w-[500px] p-[13px_20px] pointer-events-auto outline-none rounded-[20px] border-[2.5px] border-[--outline-color] bg-[--inner-bg-color] font-semibold"
-                    type="email"
-                    placeholder="Example@gmail.com"
-                    onFocus={() => setEmailFocused(true)}
-                    onBlur={() => setEmailFocused(false)}
-                    required
-                  />
-                </div>
-                <div className="relative flex flex-col items-end">
-                  <p className="self-end absolute mt-[-12px] font-bold mr-[30px] px-[5px] tracking-[.5px] z-[1]">
-                    <span className={messageFocused ? "fontshine1" : "text-white"}>Message</span>
-                  </p>
-                  <p className="self-end absolute mt-[-12px] font-bold mr-[30px] px-[5px] tracking-[.5px] bg-[--mainbg-color]">
-                    <span className="text-[--mainbg-color]">Message</span>
-                  </p>
-                  <textarea
-                    ref={contactMessageRef}
-                    className="flex items-center my-[13] max-w-[90vw] w-[500px] h-[150px] p-[13px_20px] pointer-events-auto outline-none rounded-[25px] border-[2.5px] border-[--outline-color] font-semibold resize-none bg-[--inner-bg-color]"
-                    placeholder="Your Message..."
-                    onFocus={() => setMessageFocused(true)}
-                    onBlur={() => setMessageFocused(false)}
-                    required
-                  />
-                </div>
-                {errorMessage && <p className="text-red-500 font-semibold mt-[-20px]">{errorMessage}</p>}
-                <button
-                  ref={contactBtnRef}
-                  type="submit"
-                  className="bg-inner-bg-color px-[40px] py-[7px] text-[18px] border-[2.5px] border-[--outline-color] rounded-[20px] self-center font-semibold m-3 transition-transform duration-1000 bg-[--inner-bg-color] hover:bg-[#66666b] hover:bg-opacity-[.2]"
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
             {/* FOOTER */}
             <footer className="footer-h-pg">
               <div className="flex relative text-[1.8rem] gap-[13px] -bottom-[50px]">

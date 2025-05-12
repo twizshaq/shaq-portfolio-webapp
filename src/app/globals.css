@@ -20,15 +20,15 @@
   display: flex;
   overflow: hidden;
   flex-direction: column;
-  border-width: 1.5px;
-  border-color: #2c2c2e;
+  /* border-width: 1.5px; */
+  /* border-color: #2c2c2e; */
   gap: 20px;
   /* max-width: 90vw; */
   /* width: fit-content; */
   /* min-width: fit-content; */
   flex-wrap: wrap;
   justify-content: center;
-  background-color: var(--inner-bg-color);
+  /* background-color: var(--inner-bg-color); */
   /* blue-400 at 20% opacity */
   padding: 1.25rem;
   /* equivalent to Tailwind's p-5 */
@@ -1707,7 +1707,7 @@ body.no-scroll {
     }
   
     .jobtitle {
-      font-weight: 700;
+      font-weight: 600;
     }
     .testbox {
       padding: 0px 10px;
@@ -1734,7 +1734,7 @@ body.no-scroll {
 }
 
 .jobtitle {
-  font-size: 25px;
+  font-size: 1.2rem;
   font-weight: 600;
   padding-bottom: 30px;
 }
